@@ -3,7 +3,7 @@
 #
 #   scripts/graphs list  [GRAPH...]                 title and engines of each graph
 #   scripts/graphs check [GRAPH...]                 plumcraft-editor check, one graph at a time
-#   scripts/graphs run   [GRAPH...] [--out DIR]     plumcraft-editor run; files go to DIR/<graph>/ (default: out)
+#   scripts/graphs run   [GRAPH...] [--out DIR]     plumcraft-editor run; files go to DIR/<graph>/ (default: out), emptied first
 #   scripts/graphs tidy  [GRAPH...]                 plumcraft-editor tidy (Edit › Tidy, saved in place)
 #
 # GRAPH is a .json file or a folder of them (default: graphs). Every graph names its engines, so
@@ -64,6 +64,7 @@ case "$cmd" in
     for g in "${graphs[@]}"; do
       slug="$(basename "$g" .json)"
       echo "── ${g#$here/}  [$(meta "$g" | cut -f2)]"
+      rm -rf "${out:?}/$slug"   # so the listing below shows only what this run wrote
       start=$(date +%s)
       if "$editor" run "$g" --out "$out/$slug" ${extra[@]+"${extra[@]}"} > "$out/$slug.log" 2>&1; then state=ok; else state=FAIL; bad=1; tail -5 "$out/$slug.log"; fi
       secs=$(( $(date +%s) - start ))
