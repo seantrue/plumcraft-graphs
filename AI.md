@@ -10,6 +10,14 @@ The project was started from the maintainer's request, quoted below. The maintai
 
 ## Contributions
 
+### 2026-11-06 — `scripts/graphs run` empties each graph's output folder first (Claude Opus 5.5)
+
+**What the maintainer asked for:** the report "\"scripts/graphs run\" fails because the engines are not specified", then "yes, clear each graph's out folder before running", then "CPM".
+
+**Investigated, with no change to the graphs:** every graph names its engines. The failure came from a stale `~/.cargo/bin/plumcraft-editor` (PlumCraft 0.1.0), which the script picks before the installed app. That version ignores a graph's `engines` list. The maintainer removed the stale binaries, and all 22 tracked graphs then ran on the app's editor (0.2.4). The untracked server-status graph still failed, with "engine duckdb: 5 crashes in a minute". By capturing the engine's stderr, the AI traced that failure to an old copy of the Python engine SDK in the installed `duckdb-engine` tool. That copy didn't strip `unix:` from `PLUMCRAFT_ENGINE_SOCKET`. The SDK revision that `plumcraft-duckdb` pins already handles the prefix, so reinstalling the tool (`uv tool install --force --reinstall`, then `duckdb-engine register`) fixed it, and nothing changed in either repository.
+
+**What the AI did:** made `scripts/graphs run` delete `out/<graph>/` before running each graph, and noted this in the usage text (~3 LOC). The reason is that a failed run of the server-status graph had listed seven output files, all left from an older run, so a failure looked like it had produced output. Tested by putting a stale file in `out/ringtone/` and rerunning that graph: the file was gone and only the five new outputs were listed.
+
 ### 2026-11-05 — First commit of the collection (Claude Opus 5.5)
 
 **What the maintainer asked for:** "CP" (commit and push). Then: "Make sure that no secrets or personal data are commited", and "Uncommit all the data files, commentary, and graphs related to [the home server's] estate statys".
