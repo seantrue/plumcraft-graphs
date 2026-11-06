@@ -1,0 +1,1072 @@
+{
+  "engines": [
+    "effectcraft",
+    "array"
+  ],
+  "meta": {
+    "about": "EffectCraft → array engine. The first exercise of every animation course: a ball that bounces, squashing as it lands and stretching as it leaves, driven entirely by expressions. EffectCraft renders twelve frames across one second; the array engine lays them out as a storyboard sheet with a frame line, which is how you check timing and spacing without playing anything.",
+    "tags": [
+      "animation",
+      "motion",
+      "video-to-image"
+    ],
+    "title": "Bouncing-ball storyboard"
+  },
+  "nodes": {
+    "ball": {
+      "kind": "ec.shape",
+      "pos": [
+        1327.0,
+        0.0
+      ],
+      "values": {
+        "fill": "#8e4585",
+        "kind": "ellipse",
+        "size": [
+          90,
+          90
+        ]
+      }
+    },
+    "board": {
+      "kind": "array.constant",
+      "pos": [
+        667.0,
+        297.0
+      ],
+      "title": "Storyboard",
+      "values": {
+        "channels": 3,
+        "height": 752,
+        "value": 0.15,
+        "width": 1320
+      }
+    },
+    "bounce": {
+      "kind": "ec.expression",
+      "pos": [
+        1650.0,
+        0.0
+      ],
+      "values": {
+        "expression": "var t = (time * 2) % 1; var y = 4 * t * (1 - t); [120 + time * 400, 395 - y * 300]",
+        "layer": "#1",
+        "path": "transform/position"
+      }
+    },
+    "comp": {
+      "kind": "ec.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "background": "#f4efe6",
+        "duration": 1.0,
+        "frameRate": 24.0,
+        "height": 480,
+        "name": "Bounce",
+        "width": 640
+      }
+    },
+    "d0": {
+      "kind": "array.decode_image",
+      "pos": [
+        667.0,
+        480.0
+      ]
+    },
+    "d1": {
+      "kind": "array.decode_image",
+      "pos": [
+        1018.0,
+        663.0
+      ]
+    },
+    "d10": {
+      "kind": "array.decode_image",
+      "pos": [
+        4177.0,
+        2310.0
+      ]
+    },
+    "d11": {
+      "kind": "array.decode_image",
+      "pos": [
+        4528.0,
+        2493.0
+      ]
+    },
+    "d2": {
+      "kind": "array.decode_image",
+      "pos": [
+        1369.0,
+        846.0
+      ]
+    },
+    "d3": {
+      "kind": "array.decode_image",
+      "pos": [
+        1720.0,
+        1029.0
+      ]
+    },
+    "d4": {
+      "kind": "array.decode_image",
+      "pos": [
+        2071.0,
+        1212.0
+      ]
+    },
+    "d5": {
+      "kind": "array.decode_image",
+      "pos": [
+        2422.0,
+        1395.0
+      ]
+    },
+    "d6": {
+      "kind": "array.decode_image",
+      "pos": [
+        2773.0,
+        1578.0
+      ]
+    },
+    "d7": {
+      "kind": "array.decode_image",
+      "pos": [
+        3124.0,
+        1761.0
+      ]
+    },
+    "d8": {
+      "kind": "array.decode_image",
+      "pos": [
+        3475.0,
+        1944.0
+      ]
+    },
+    "d9": {
+      "kind": "array.decode_image",
+      "pos": [
+        3826.0,
+        2127.0
+      ]
+    },
+    "f0": {
+      "kind": "ec.export_png",
+      "pos": [
+        316.0,
+        297.0
+      ],
+      "title": "Frame at 0.00 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.0
+      }
+    },
+    "f1": {
+      "kind": "ec.export_png",
+      "pos": [
+        667.0,
+        663.0
+      ],
+      "title": "Frame at 0.08 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.083
+      }
+    },
+    "f10": {
+      "kind": "ec.export_png",
+      "pos": [
+        3826.0,
+        2310.0
+      ],
+      "title": "Frame at 0.83 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.833
+      }
+    },
+    "f11": {
+      "kind": "ec.export_png",
+      "pos": [
+        4177.0,
+        2493.0
+      ],
+      "title": "Frame at 0.92 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.917
+      }
+    },
+    "f2": {
+      "kind": "ec.export_png",
+      "pos": [
+        1018.0,
+        846.0
+      ],
+      "title": "Frame at 0.17 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.167
+      }
+    },
+    "f3": {
+      "kind": "ec.export_png",
+      "pos": [
+        1369.0,
+        1029.0
+      ],
+      "title": "Frame at 0.25 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.25
+      }
+    },
+    "f4": {
+      "kind": "ec.export_png",
+      "pos": [
+        1720.0,
+        1212.0
+      ],
+      "title": "Frame at 0.33 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.333
+      }
+    },
+    "f5": {
+      "kind": "ec.export_png",
+      "pos": [
+        2071.0,
+        1395.0
+      ],
+      "title": "Frame at 0.42 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.417
+      }
+    },
+    "f6": {
+      "kind": "ec.export_png",
+      "pos": [
+        2422.0,
+        1578.0
+      ],
+      "title": "Frame at 0.50 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.5
+      }
+    },
+    "f7": {
+      "kind": "ec.export_png",
+      "pos": [
+        2773.0,
+        1761.0
+      ],
+      "title": "Frame at 0.58 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.583
+      }
+    },
+    "f8": {
+      "kind": "ec.export_png",
+      "pos": [
+        3124.0,
+        1944.0
+      ],
+      "title": "Frame at 0.67 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.667
+      }
+    },
+    "f9": {
+      "kind": "ec.export_png",
+      "pos": [
+        3475.0,
+        2127.0
+      ],
+      "title": "Frame at 0.75 s",
+      "values": {
+        "scale": 0.5,
+        "time": 0.75
+      }
+    },
+    "floor": {
+      "kind": "ec.shape",
+      "pos": [
+        674.0,
+        0.0
+      ],
+      "values": {
+        "fill": "#3d2b1f",
+        "kind": "rect",
+        "size": [
+          640,
+          8
+        ]
+      }
+    },
+    "floor_at": {
+      "kind": "ec.set_property",
+      "pos": [
+        997.0,
+        0.0
+      ],
+      "values": {
+        "layer": "#1",
+        "path": "transform/position",
+        "value": [
+          320,
+          444
+        ]
+      }
+    },
+    "p0": {
+      "kind": "array.composite",
+      "pos": [
+        1018.0,
+        297.0
+      ],
+      "values": {
+        "x": 8,
+        "y": 8
+      }
+    },
+    "p1": {
+      "kind": "array.composite",
+      "pos": [
+        1369.0,
+        297.0
+      ],
+      "values": {
+        "x": 336,
+        "y": 8
+      }
+    },
+    "p10": {
+      "kind": "array.composite",
+      "pos": [
+        4528.0,
+        297.0
+      ],
+      "values": {
+        "x": 664,
+        "y": 504
+      }
+    },
+    "p11": {
+      "kind": "array.composite",
+      "pos": [
+        4858.0,
+        297.0
+      ],
+      "values": {
+        "x": 992,
+        "y": 504
+      }
+    },
+    "p2": {
+      "kind": "array.composite",
+      "pos": [
+        1720.0,
+        297.0
+      ],
+      "values": {
+        "x": 664,
+        "y": 8
+      }
+    },
+    "p3": {
+      "kind": "array.composite",
+      "pos": [
+        2071.0,
+        297.0
+      ],
+      "values": {
+        "x": 992,
+        "y": 8
+      }
+    },
+    "p4": {
+      "kind": "array.composite",
+      "pos": [
+        2422.0,
+        297.0
+      ],
+      "values": {
+        "x": 8,
+        "y": 256
+      }
+    },
+    "p5": {
+      "kind": "array.composite",
+      "pos": [
+        2773.0,
+        297.0
+      ],
+      "values": {
+        "x": 336,
+        "y": 256
+      }
+    },
+    "p6": {
+      "kind": "array.composite",
+      "pos": [
+        3124.0,
+        297.0
+      ],
+      "values": {
+        "x": 664,
+        "y": 256
+      }
+    },
+    "p7": {
+      "kind": "array.composite",
+      "pos": [
+        3475.0,
+        297.0
+      ],
+      "values": {
+        "x": 992,
+        "y": 256
+      }
+    },
+    "p8": {
+      "kind": "array.composite",
+      "pos": [
+        3826.0,
+        297.0
+      ],
+      "values": {
+        "x": 8,
+        "y": 504
+      }
+    },
+    "p9": {
+      "kind": "array.composite",
+      "pos": [
+        4177.0,
+        297.0
+      ],
+      "values": {
+        "x": 336,
+        "y": 504
+      }
+    },
+    "paper": {
+      "kind": "ec.solid",
+      "pos": [
+        351.0,
+        0.0
+      ],
+      "values": {
+        "color": "#f4efe6",
+        "name": "Paper"
+      }
+    },
+    "save_sheet": {
+      "engine": "array",
+      "kind": "file.write",
+      "pos": [
+        5497.0,
+        297.0
+      ],
+      "values": {
+        "basename": "bounce-storyboard",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "sheet": {
+      "kind": "array.encode_image",
+      "pos": [
+        5167.0,
+        297.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "squash": {
+      "kind": "ec.expression",
+      "pos": [
+        0.0,
+        297.0
+      ],
+      "values": {
+        "expression": "var t = (time * 2) % 1; var v = Math.abs(1 - 2 * t); var s = Math.pow(v, 6); [100 + 35 * s, 100 - 30 * s]",
+        "layer": "#1",
+        "path": "transform/scale"
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "comp",
+        "port": "doc"
+      },
+      "to": {
+        "node": "paper",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "paper",
+        "port": "doc"
+      },
+      "to": {
+        "node": "floor",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "floor",
+        "port": "doc"
+      },
+      "to": {
+        "node": "floor_at",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "floor_at",
+        "port": "doc"
+      },
+      "to": {
+        "node": "ball",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ball",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bounce",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bounce",
+        "port": "doc"
+      },
+      "to": {
+        "node": "squash",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f0",
+        "port": "image"
+      },
+      "to": {
+        "node": "d0",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "board",
+        "port": "constant"
+      },
+      "to": {
+        "node": "p0",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d0",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p0",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f1",
+        "port": "image"
+      },
+      "to": {
+        "node": "d1",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p0",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p1",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d1",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p1",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f2",
+        "port": "image"
+      },
+      "to": {
+        "node": "d2",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p1",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p2",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d2",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p2",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f3",
+        "port": "image"
+      },
+      "to": {
+        "node": "d3",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p2",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p3",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d3",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p3",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f4",
+        "port": "image"
+      },
+      "to": {
+        "node": "d4",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p3",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p4",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d4",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p4",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f5",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f5",
+        "port": "image"
+      },
+      "to": {
+        "node": "d5",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p4",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p5",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d5",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p5",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f6",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f6",
+        "port": "image"
+      },
+      "to": {
+        "node": "d6",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p5",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p6",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d6",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p6",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f7",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f7",
+        "port": "image"
+      },
+      "to": {
+        "node": "d7",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p6",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p7",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d7",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p7",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f8",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f8",
+        "port": "image"
+      },
+      "to": {
+        "node": "d8",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p7",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p8",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d8",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p8",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f9",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f9",
+        "port": "image"
+      },
+      "to": {
+        "node": "d9",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p8",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p9",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d9",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p9",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f10",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f10",
+        "port": "image"
+      },
+      "to": {
+        "node": "d10",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p9",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p10",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d10",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p10",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "squash",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f11",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f11",
+        "port": "image"
+      },
+      "to": {
+        "node": "d11",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "p10",
+        "port": "composite"
+      },
+      "to": {
+        "node": "p11",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "d11",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "p11",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "p11",
+        "port": "composite"
+      },
+      "to": {
+        "node": "sheet",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "sheet",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_sheet",
+        "port": "values"
+      }
+    }
+  ]
+}

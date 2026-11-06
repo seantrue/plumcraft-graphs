@@ -1,0 +1,1037 @@
+{
+  "engines": [
+    "array",
+    "photocraft",
+    "vectorcraft",
+    "figcraft"
+  ],
+  "meta": {
+    "about": "array → PhotoCraft → VectorCraft → FigCraft → PhotoCraft → VectorCraft → array. The parlour game with pictures: the array engine draws a message, and each craft in turn opens what the last one handed over and passes on its own export: a cheap JPEG, an Image Trace, a half-size PNG, another cheap JPEG, a three-colour trace. The array engine lays every hop side by side and maps what was lost on the way as a heat map. Values cross six engine borders unchanged; the damage is all the crafts' own.",
+    "tags": [
+      "game",
+      "images",
+      "relay"
+    ],
+    "title": "Broken telephone"
+  },
+  "nodes": {
+    "dec0": {
+      "kind": "array.decode_image",
+      "pos": [
+        2226.0,
+        0.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "dec1": {
+      "kind": "array.decode_image",
+      "pos": [
+        2556.0,
+        471.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "dec2": {
+      "kind": "array.decode_image",
+      "pos": [
+        2893.0,
+        780.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "dec3": {
+      "kind": "array.decode_image",
+      "pos": [
+        3539.0,
+        1209.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "dec4": {
+      "kind": "array.decode_image",
+      "pos": [
+        4192.0,
+        1476.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "dec5": {
+      "kind": "array.decode_image",
+      "pos": [
+        0.0,
+        2010.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "diff": {
+      "kind": "array.arithmetic",
+      "pos": [
+        624.0,
+        2010.0
+      ],
+      "values": {
+        "operation": "subtract"
+      }
+    },
+    "fig_in": {
+      "kind": "fig.open",
+      "pos": [
+        2893.0,
+        963.0
+      ]
+    },
+    "fig_out": {
+      "kind": "fig.export_png",
+      "pos": [
+        3223.0,
+        1068.0
+      ],
+      "values": {
+        "scale": 0.5
+      }
+    },
+    "fit0": {
+      "kind": "array.resize",
+      "pos": [
+        2556.0,
+        0.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "fit1": {
+      "kind": "array.resize",
+      "pos": [
+        2893.0,
+        492.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "fit2": {
+      "kind": "array.resize",
+      "pos": [
+        3223.0,
+        780.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "fit3": {
+      "kind": "array.resize",
+      "pos": [
+        3869.0,
+        1209.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "fit4": {
+      "kind": "array.resize",
+      "pos": [
+        4522.0,
+        1650.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "fit5": {
+      "kind": "array.resize",
+      "pos": [
+        330.0,
+        2010.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 256,
+        "target_width": 384
+      }
+    },
+    "hsi": {
+      "kind": "array.convert_color_space",
+      "pos": [
+        1270.0,
+        2010.0
+      ],
+      "values": {
+        "target": "HSI"
+      }
+    },
+    "lost": {
+      "kind": "array.pick_channel",
+      "pos": [
+        1649.0,
+        2010.0
+      ],
+      "values": {
+        "channel": 3
+      }
+    },
+    "lost_n": {
+      "kind": "array.normalize",
+      "pos": [
+        1979.0,
+        2010.0
+      ],
+      "values": {
+        "over": "whole array"
+      }
+    },
+    "lost_png": {
+      "kind": "array.encode_image",
+      "pos": [
+        2288.0,
+        2010.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "mandel": {
+      "kind": "array.mandelbrot",
+      "pos": [
+        0.0,
+        576.0
+      ],
+      "values": {
+        "center_x": -0.75,
+        "center_y": 0.1,
+        "height": 256,
+        "width": 384,
+        "zoom": 1.6
+      }
+    },
+    "msg": {
+      "kind": "array.draw_text",
+      "pos": [
+        631.0,
+        0.0
+      ],
+      "values": {
+        "color": "#ffffff",
+        "h_align": "C",
+        "size": 44,
+        "text": "Plums at noon?",
+        "v_align": "C",
+        "x": 0,
+        "y": 0
+      }
+    },
+    "noise": {
+      "kind": "array.simplex_noise",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "cells": 3.0,
+        "height": 256,
+        "seed": 4,
+        "width": 384
+      }
+    },
+    "noise2": {
+      "kind": "array.simplex_noise",
+      "pos": [
+        0.0,
+        288.0
+      ],
+      "values": {
+        "cells": 5.0,
+        "height": 256,
+        "seed": 9,
+        "width": 384
+      }
+    },
+    "pc1_in": {
+      "kind": "pc.open",
+      "pos": [
+        1275.0,
+        0.0
+      ]
+    },
+    "pc1_out": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        1589.0,
+        0.0
+      ],
+      "values": {
+        "quality": 12
+      }
+    },
+    "pc2_in": {
+      "kind": "pc.open",
+      "pos": [
+        3539.0,
+        1068.0
+      ]
+    },
+    "pc2_out": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        3869.0,
+        1068.0
+      ],
+      "values": {
+        "quality": 8
+      }
+    },
+    "put0": {
+      "kind": "array.composite",
+      "pos": [
+        2893.0,
+        288.0
+      ],
+      "values": {
+        "x": 12,
+        "y": 12
+      }
+    },
+    "put1": {
+      "kind": "array.composite",
+      "pos": [
+        3223.0,
+        288.0
+      ],
+      "values": {
+        "x": 408,
+        "y": 12
+      }
+    },
+    "put2": {
+      "kind": "array.composite",
+      "pos": [
+        3539.0,
+        288.0
+      ],
+      "values": {
+        "x": 804,
+        "y": 12
+      }
+    },
+    "put3": {
+      "kind": "array.composite",
+      "pos": [
+        4192.0,
+        1272.0
+      ],
+      "values": {
+        "x": 12,
+        "y": 280
+      }
+    },
+    "put4": {
+      "kind": "array.composite",
+      "pos": [
+        4845.0,
+        1272.0
+      ],
+      "values": {
+        "x": 408,
+        "y": 280
+      }
+    },
+    "put5": {
+      "kind": "array.composite",
+      "pos": [
+        624.0,
+        2172.0
+      ],
+      "values": {
+        "x": 804,
+        "y": 280
+      }
+    },
+    "rgb": {
+      "kind": "array.stack",
+      "pos": [
+        337.0,
+        0.0
+      ],
+      "values": {
+        "space": "RGB"
+      }
+    },
+    "save_lost": {
+      "engine": "array",
+      "kind": "file.write",
+      "pos": [
+        2618.0,
+        2010.0
+      ],
+      "values": {
+        "basename": "what-was-lost",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_sheet": {
+      "engine": "array",
+      "kind": "file.write",
+      "pos": [
+        1270.0,
+        2193.0
+      ],
+      "values": {
+        "basename": "every-hop",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "sheet": {
+      "kind": "array.constant",
+      "pos": [
+        2556.0,
+        288.0
+      ],
+      "title": "Contact sheet",
+      "values": {
+        "channels": 3,
+        "height": 548,
+        "value": 0.08,
+        "width": 1200
+      }
+    },
+    "sheet_png": {
+      "kind": "array.encode_image",
+      "pos": [
+        940.0,
+        2172.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "sq": {
+      "kind": "array.arithmetic",
+      "pos": [
+        940.0,
+        2010.0
+      ],
+      "values": {
+        "operation": "multiply"
+      }
+    },
+    "start": {
+      "kind": "array.encode_image",
+      "pos": [
+        945.0,
+        0.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "trace1": {
+      "kind": "vc.trace",
+      "pos": [
+        2226.0,
+        183.0
+      ],
+      "values": {
+        "preset": "6 Colors"
+      }
+    },
+    "trace2": {
+      "kind": "vc.trace",
+      "pos": [
+        4522.0,
+        1068.0
+      ],
+      "values": {
+        "preset": "3 Colors"
+      }
+    },
+    "vc1_in": {
+      "kind": "vc.open",
+      "pos": [
+        1912.0,
+        0.0
+      ]
+    },
+    "vc1_out": {
+      "kind": "vc.export_png",
+      "pos": [
+        2556.0,
+        654.0
+      ]
+    },
+    "vc2_in": {
+      "kind": "vc.open",
+      "pos": [
+        4192.0,
+        1068.0
+      ]
+    },
+    "vc2_out": {
+      "kind": "vc.export_png",
+      "pos": [
+        4845.0,
+        1068.0
+      ]
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "noise",
+        "port": "noise"
+      },
+      "to": {
+        "node": "rgb",
+        "port": "c1"
+      }
+    },
+    {
+      "from": {
+        "node": "noise2",
+        "port": "noise"
+      },
+      "to": {
+        "node": "rgb",
+        "port": "c2"
+      }
+    },
+    {
+      "from": {
+        "node": "mandel",
+        "port": "escape"
+      },
+      "to": {
+        "node": "rgb",
+        "port": "c3"
+      }
+    },
+    {
+      "from": {
+        "node": "rgb",
+        "port": "stack"
+      },
+      "to": {
+        "node": "msg",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "msg",
+        "port": "drawing"
+      },
+      "to": {
+        "node": "start",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "start",
+        "port": "image"
+      },
+      "to": {
+        "node": "pc1_in",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "pc1_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pc1_out",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pc1_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "vc1_in",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "vc1_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "trace1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "trace1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "vc1_out",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "vc1_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "fig_in",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "fig_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fig_out",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fig_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "pc2_in",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "pc2_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pc2_out",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pc2_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "vc2_in",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "vc2_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "trace2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "trace2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "vc2_out",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "start",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec0",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec0",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit0",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "sheet",
+        "port": "constant"
+      },
+      "to": {
+        "node": "put0",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit0",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put0",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "pc1_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec1",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec1",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit1",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put0",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put1",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit1",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put1",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "vc1_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec2",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec2",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit2",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put1",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put2",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit2",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put2",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "fig_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec3",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec3",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit3",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put2",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put3",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit3",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put3",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "pc2_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec4",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec4",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit4",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put3",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put4",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit4",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put4",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "vc2_out",
+        "port": "image"
+      },
+      "to": {
+        "node": "dec5",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "dec5",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit5",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put4",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put5",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit5",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put5",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "put5",
+        "port": "composite"
+      },
+      "to": {
+        "node": "sheet_png",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "fit0",
+        "port": "resized"
+      },
+      "to": {
+        "node": "diff",
+        "port": "b"
+      }
+    },
+    {
+      "from": {
+        "node": "fit5",
+        "port": "resized"
+      },
+      "to": {
+        "node": "diff",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "diff",
+        "port": "result"
+      },
+      "to": {
+        "node": "sq",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "diff",
+        "port": "result"
+      },
+      "to": {
+        "node": "sq",
+        "port": "b"
+      }
+    },
+    {
+      "from": {
+        "node": "sq",
+        "port": "result"
+      },
+      "to": {
+        "node": "hsi",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "hsi",
+        "port": "converted"
+      },
+      "to": {
+        "node": "lost",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "lost",
+        "port": "channel"
+      },
+      "to": {
+        "node": "lost_n",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "lost_n",
+        "port": "normalized"
+      },
+      "to": {
+        "node": "lost_png",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "sheet_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_sheet",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "lost_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_lost",
+        "port": "values"
+      }
+    }
+  ]
+}

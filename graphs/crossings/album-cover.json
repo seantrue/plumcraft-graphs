@@ -1,0 +1,988 @@
+{
+  "engines": [
+    "soundcraft",
+    "audio",
+    "array",
+    "photocraft",
+    "figcraft"
+  ],
+  "meta": {
+    "about": "SoundCraft → audio engine → array engine → PhotoCraft → FigCraft. SoundCraft plays the title track of 'Pits & Pieces' by The Stone Fruits; the audio engine turns the bounce into a spectrogram; the array engine colours it from plum (quiet) to apricot (loud); PhotoCraft paints it in oils; FigCraft sets the band name and title. Change the notes and the cover changes with them.",
+    "tags": [
+      "music",
+      "art",
+      "audio-to-image"
+    ],
+    "title": "An album cover painted by its own music"
+  },
+  "nodes": {
+    "album": {
+      "kind": "fig.text",
+      "pos": [
+        2264.0,
+        891.0
+      ],
+      "values": {
+        "props": {
+          "fills": [
+            "#FFF4E6"
+          ],
+          "fontSize": 64,
+          "fontStyle": "italic"
+        },
+        "text": "Pits & Pieces",
+        "x": 64.0,
+        "y": 880.0
+      }
+    },
+    "band": {
+      "kind": "fig.text",
+      "pos": [
+        1950.0,
+        891.0
+      ],
+      "values": {
+        "props": {
+          "fills": [
+            "#FFF4E6"
+          ],
+          "fontSize": 88,
+          "fontWeight": 800
+        },
+        "text": "THE STONE FRUITS",
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "bounce": {
+      "kind": "sc.export_wav",
+      "pos": [
+        2580.0,
+        0.0
+      ],
+      "values": {
+        "normalize": true
+      }
+    },
+    "bright": {
+      "kind": "array.arithmetic",
+      "pos": [
+        1018.0,
+        495.0
+      ],
+      "title": "Lift the quiet parts",
+      "values": {
+        "constant": 0.85,
+        "operation": "multiply"
+      }
+    },
+    "bright2": {
+      "kind": "array.arithmetic",
+      "pos": [
+        1404.0,
+        657.0
+      ],
+      "values": {
+        "constant": 0.12,
+        "operation": "add"
+      }
+    },
+    "canvas": {
+      "kind": "pc.open",
+      "pos": [
+        330.0,
+        891.0
+      ]
+    },
+    "clip": {
+      "kind": "array.clamp",
+      "pos": [
+        2393.0,
+        333.0
+      ],
+      "values": {
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "cover": {
+      "kind": "fig.open",
+      "pos": [
+        1636.0,
+        891.0
+      ]
+    },
+    "echo": {
+      "kind": "sc.delay",
+      "pos": [
+        2266.0,
+        0.0
+      ],
+      "values": {
+        "feedback": 40.0,
+        "mix": 30.0,
+        "time": 0.357,
+        "track": "Lead"
+      }
+    },
+    "final": {
+      "kind": "fig.export_png",
+      "pos": [
+        2578.0,
+        891.0
+      ],
+      "values": {
+        "scale": 1.0
+      }
+    },
+    "hall": {
+      "kind": "sc.reverb",
+      "pos": [
+        1952.0,
+        0.0
+      ],
+      "values": {
+        "mix": 40.0,
+        "plugin": "plate_reverb",
+        "track": "Pad"
+      }
+    },
+    "hsv": {
+      "kind": "array.stack",
+      "pos": [
+        1720.0,
+        333.0
+      ],
+      "values": {
+        "space": "HSV"
+      }
+    },
+    "hue": {
+      "kind": "array.arithmetic",
+      "pos": [
+        1018.0,
+        333.0
+      ],
+      "values": {
+        "constant": 300.0,
+        "operation": "add"
+      }
+    },
+    "hue_span": {
+      "kind": "array.arithmetic",
+      "pos": [
+        632.0,
+        333.0
+      ],
+      "title": "Hue: plum to apricot",
+      "values": {
+        "constant": 90.0,
+        "operation": "multiply"
+      }
+    },
+    "hue_wrap": {
+      "kind": "array.wrap_angle",
+      "pos": [
+        1404.0,
+        333.0
+      ],
+      "values": {
+        "range": "unsigned",
+        "turn": 360.0
+      }
+    },
+    "lead": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        1278.0,
+        0.0
+      ],
+      "values": {
+        "format": "stereo",
+        "instrument": "subtractive_synth",
+        "name": "Lead"
+      }
+    },
+    "lead_notes": {
+      "kind": "sc.notes",
+      "pos": [
+        1636.0,
+        0.0
+      ],
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 912,
+            "pitch": 76,
+            "start_ticks": 0,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 456,
+            "pitch": 74,
+            "start_ticks": 960,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 456,
+            "pitch": 72,
+            "start_ticks": 1440,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1824,
+            "pitch": 69,
+            "start_ticks": 1920,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 456,
+            "pitch": 72,
+            "start_ticks": 4800,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 456,
+            "pitch": 74,
+            "start_ticks": 5280,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 76,
+            "start_ticks": 5760,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 79,
+            "start_ticks": 6720,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1824,
+            "pitch": 77,
+            "start_ticks": 7680,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1824,
+            "pitch": 76,
+            "start_ticks": 9600,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 74,
+            "start_ticks": 11520,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 72,
+            "start_ticks": 12480,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 69,
+            "start_ticks": 13440,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 912,
+            "pitch": 67,
+            "start_ticks": 14400,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 69,
+            "start_ticks": 15360,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1824,
+            "pitch": 81,
+            "start_ticks": 23040,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1824,
+            "pitch": 79,
+            "start_ticks": 24960,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 76,
+            "start_ticks": 26880,
+            "velocity": 96
+          }
+        ],
+        "track": "Lead"
+      }
+    },
+    "level": {
+      "kind": "array.normalize",
+      "pos": [
+        323.0,
+        333.0
+      ],
+      "values": {
+        "over": "whole array"
+      }
+    },
+    "oil": {
+      "kind": "pc.oil_paint",
+      "pos": [
+        653.0,
+        891.0
+      ],
+      "values": {
+        "bristleDetail": 6.0,
+        "cleanliness": 3.0,
+        "scale": 2.0,
+        "stylization": 5.0
+      }
+    },
+    "pad": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        604.0,
+        0.0
+      ],
+      "values": {
+        "format": "stereo",
+        "instrument": "subtractive_synth",
+        "name": "Pad"
+      }
+    },
+    "pad_notes": {
+      "kind": "sc.notes",
+      "pos": [
+        962.0,
+        0.0
+      ],
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 3648,
+            "pitch": 57,
+            "start_ticks": 0,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 60,
+            "start_ticks": 0,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 64,
+            "start_ticks": 0,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 53,
+            "start_ticks": 3840,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 57,
+            "start_ticks": 3840,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 60,
+            "start_ticks": 3840,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 48,
+            "start_ticks": 7680,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 52,
+            "start_ticks": 7680,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 55,
+            "start_ticks": 7680,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 55,
+            "start_ticks": 11520,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 59,
+            "start_ticks": 11520,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 62,
+            "start_ticks": 11520,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 57,
+            "start_ticks": 15360,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 60,
+            "start_ticks": 15360,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 64,
+            "start_ticks": 15360,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 53,
+            "start_ticks": 19200,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 57,
+            "start_ticks": 19200,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 60,
+            "start_ticks": 19200,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 48,
+            "start_ticks": 23040,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 52,
+            "start_ticks": 23040,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 55,
+            "start_ticks": 23040,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 55,
+            "start_ticks": 26880,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 59,
+            "start_ticks": 26880,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 3648,
+            "pitch": 62,
+            "start_ticks": 26880,
+            "velocity": 70
+          }
+        ],
+        "track": "Pad"
+      }
+    },
+    "painted": {
+      "kind": "pc.export_png",
+      "pos": [
+        1320.0,
+        891.0
+      ]
+    },
+    "png": {
+      "kind": "array.encode_image",
+      "pos": [
+        0.0,
+        891.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "pop": {
+      "kind": "pc.hue_saturation",
+      "pos": [
+        962.0,
+        891.0
+      ],
+      "values": {
+        "saturation": 20
+      }
+    },
+    "rgb": {
+      "kind": "array.convert_color_space",
+      "pos": [
+        2014.0,
+        333.0
+      ],
+      "values": {
+        "target": "RGB"
+      }
+    },
+    "sat": {
+      "kind": "array.constant",
+      "pos": [
+        1404.0,
+        474.0
+      ],
+      "values": {
+        "value": 0.7
+      }
+    },
+    "save_cover": {
+      "engine": "figcraft",
+      "kind": "file.write",
+      "pos": [
+        2894.0,
+        891.0
+      ],
+      "values": {
+        "basename": "pits-and-pieces-cover",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_raw": {
+      "engine": "array",
+      "kind": "file.write",
+      "pos": [
+        330.0,
+        1032.0
+      ],
+      "values": {
+        "basename": "spectrogram-coloured",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_track": {
+      "engine": "soundcraft",
+      "kind": "file.write",
+      "pos": [
+        2896.0,
+        99.0
+      ],
+      "values": {
+        "basename": "pits-and-pieces",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "session": {
+      "kind": "sc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "sample_rate": 48000
+      }
+    },
+    "spec": {
+      "kind": "audio.spectrogram",
+      "pos": [
+        0.0,
+        333.0
+      ],
+      "values": {
+        "fft_size": 4096,
+        "floor": -72.0,
+        "height": 1024,
+        "low": 50.0,
+        "width": 1024
+      }
+    },
+    "tempo": {
+      "kind": "sc.tempo",
+      "pos": [
+        323.0,
+        0.0
+      ],
+      "values": {
+        "bpm": 84.0
+      }
+    },
+    "wav": {
+      "kind": "audio.from_wav",
+      "pos": [
+        2896.0,
+        0.0
+      ]
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "session",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tempo",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tempo",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pad",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pad",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pad_notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pad_notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "lead",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "lead",
+        "port": "doc"
+      },
+      "to": {
+        "node": "lead_notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "lead_notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hall",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hall",
+        "port": "doc"
+      },
+      "to": {
+        "node": "echo",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "echo",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bounce",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bounce",
+        "port": "audio"
+      },
+      "to": {
+        "node": "wav",
+        "port": "wav"
+      }
+    },
+    {
+      "from": {
+        "node": "wav",
+        "port": "audio"
+      },
+      "to": {
+        "node": "spec",
+        "port": "audio"
+      }
+    },
+    {
+      "from": {
+        "node": "spec",
+        "port": "spectrogram"
+      },
+      "to": {
+        "node": "level",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "level",
+        "port": "normalized"
+      },
+      "to": {
+        "node": "hue_span",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "hue_span",
+        "port": "result"
+      },
+      "to": {
+        "node": "hue",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "hue",
+        "port": "result"
+      },
+      "to": {
+        "node": "hue_wrap",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "level",
+        "port": "normalized"
+      },
+      "to": {
+        "node": "sat",
+        "port": "like"
+      }
+    },
+    {
+      "from": {
+        "node": "level",
+        "port": "normalized"
+      },
+      "to": {
+        "node": "bright",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "bright",
+        "port": "result"
+      },
+      "to": {
+        "node": "bright2",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "hue_wrap",
+        "port": "wrapped"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c1"
+      }
+    },
+    {
+      "from": {
+        "node": "sat",
+        "port": "constant"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c2"
+      }
+    },
+    {
+      "from": {
+        "node": "bright2",
+        "port": "result"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c3"
+      }
+    },
+    {
+      "from": {
+        "node": "hsv",
+        "port": "stack"
+      },
+      "to": {
+        "node": "rgb",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "rgb",
+        "port": "converted"
+      },
+      "to": {
+        "node": "clip",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "clip",
+        "port": "clamped"
+      },
+      "to": {
+        "node": "png",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "canvas",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "canvas",
+        "port": "doc"
+      },
+      "to": {
+        "node": "oil",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "oil",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pop",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pop",
+        "port": "doc"
+      },
+      "to": {
+        "node": "painted",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "painted",
+        "port": "image"
+      },
+      "to": {
+        "node": "cover",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "cover",
+        "port": "doc"
+      },
+      "to": {
+        "node": "band",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "band",
+        "port": "doc"
+      },
+      "to": {
+        "node": "album",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "album",
+        "port": "doc"
+      },
+      "to": {
+        "node": "final",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "final",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_cover",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "bounce",
+        "port": "audio"
+      },
+      "to": {
+        "node": "save_track",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_raw",
+        "port": "values"
+      }
+    }
+  ]
+}

@@ -1,0 +1,791 @@
+{
+  "engines": [
+    "filmcraft",
+    "vectorcraft",
+    "array",
+    "photocraft"
+  ],
+  "meta": {
+    "about": "FilmCraft → VectorCraft → array engine → PhotoCraft. FilmCraft renders a frame of its ocean-sunset footage; VectorCraft traces it into flat colour and makes four hue-shifted screen prints; the array engine tiles them two by two; PhotoCraft adds paper grain and a faded-film look so it reads as a print. Pick another scene in Demo footage for a different set.",
+    "tags": [
+      "art",
+      "video-to-image",
+      "pop-art"
+    ],
+    "title": "Four sunsets, Warhol-style"
+  },
+  "nodes": {
+    "film": {
+      "kind": "pc.color_lookup",
+      "pos": [
+        3535.0,
+        438.0
+      ],
+      "values": {
+        "lut": "fadedFilm"
+      }
+    },
+    "final": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        4174.0,
+        438.0
+      ],
+      "values": {
+        "quality": 92
+      }
+    },
+    "fit0": {
+      "kind": "array.resize",
+      "pos": [
+        1283.0,
+        621.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 270,
+        "target_width": 480
+      }
+    },
+    "fit1": {
+      "kind": "array.resize",
+      "pos": [
+        1613.0,
+        909.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 270,
+        "target_width": 480
+      }
+    },
+    "fit2": {
+      "kind": "array.resize",
+      "pos": [
+        1943.0,
+        1197.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 270,
+        "target_width": 480
+      }
+    },
+    "fit3": {
+      "kind": "array.resize",
+      "pos": [
+        2273.0,
+        1485.0
+      ],
+      "values": {
+        "align": false,
+        "by": "size",
+        "shrink_only": false,
+        "target_height": 270,
+        "target_width": 480
+      }
+    },
+    "footage": {
+      "kind": "fc.demo_footage",
+      "pos": [
+        323.0,
+        0.0
+      ],
+      "values": {
+        "scene": "OceanSunset"
+      }
+    },
+    "grain": {
+      "kind": "pc.add_noise",
+      "pos": [
+        3865.0,
+        438.0
+      ],
+      "values": {
+        "amount": 6.0,
+        "distribution": "gaussian",
+        "monochromatic": true,
+        "seed": 1968
+      }
+    },
+    "grid_png": {
+      "kind": "array.encode_image",
+      "pos": [
+        2891.0,
+        438.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "place": {
+      "kind": "fc.place",
+      "pos": [
+        983.0,
+        0.0
+      ],
+      "values": {
+        "seconds": 0.0,
+        "track": "V1"
+      }
+    },
+    "png0": {
+      "kind": "vc.export_png",
+      "pos": [
+        637.0,
+        438.0
+      ],
+      "values": {
+        "scale": 0.5
+      }
+    },
+    "png1": {
+      "kind": "vc.export_png",
+      "pos": [
+        953.0,
+        642.0
+      ],
+      "values": {
+        "scale": 0.5
+      }
+    },
+    "png2": {
+      "kind": "vc.export_png",
+      "pos": [
+        1283.0,
+        1092.0
+      ],
+      "values": {
+        "scale": 0.5
+      }
+    },
+    "png3": {
+      "kind": "vc.export_png",
+      "pos": [
+        1613.0,
+        1380.0
+      ],
+      "values": {
+        "scale": 0.5
+      }
+    },
+    "print": {
+      "kind": "pc.open",
+      "pos": [
+        3221.0,
+        438.0
+      ]
+    },
+    "project": {
+      "kind": "fc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "name": "Warhol"
+      }
+    },
+    "put0": {
+      "kind": "array.composite",
+      "pos": [
+        1613.0,
+        438.0
+      ],
+      "values": {
+        "x": 10,
+        "y": 10
+      }
+    },
+    "put1": {
+      "kind": "array.composite",
+      "pos": [
+        1943.0,
+        438.0
+      ],
+      "values": {
+        "x": 500,
+        "y": 10
+      }
+    },
+    "put2": {
+      "kind": "array.composite",
+      "pos": [
+        2273.0,
+        438.0
+      ],
+      "values": {
+        "x": 10,
+        "y": 290
+      }
+    },
+    "put3": {
+      "kind": "array.composite",
+      "pos": [
+        2582.0,
+        438.0
+      ],
+      "values": {
+        "x": 500,
+        "y": 290
+      }
+    },
+    "px0": {
+      "kind": "array.decode_image",
+      "pos": [
+        953.0,
+        438.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "px1": {
+      "kind": "array.decode_image",
+      "pos": [
+        1283.0,
+        909.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "px2": {
+      "kind": "array.decode_image",
+      "pos": [
+        1613.0,
+        1197.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "px3": {
+      "kind": "array.decode_image",
+      "pos": [
+        1943.0,
+        1485.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "save_final": {
+      "engine": "photocraft",
+      "kind": "file.write",
+      "pos": [
+        4497.0,
+        438.0
+      ],
+      "values": {
+        "basename": "four-sunsets",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_still": {
+      "engine": "filmcraft",
+      "kind": "file.write",
+      "pos": [
+        1706.0,
+        204.0
+      ],
+      "values": {
+        "basename": "the-frame",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "seq": {
+      "kind": "fc.sequence",
+      "pos": [
+        653.0,
+        0.0
+      ],
+      "values": {
+        "fps": 25.0,
+        "height": 540,
+        "name": "Still",
+        "width": 960
+      }
+    },
+    "still": {
+      "kind": "fc.export_png",
+      "pos": [
+        1348.0,
+        0.0
+      ],
+      "values": {
+        "time": 60
+      }
+    },
+    "tint0": {
+      "kind": "vc.fx.adjust.hueSaturation",
+      "pos": [
+        323.0,
+        438.0
+      ],
+      "title": "Hue 0°",
+      "values": {
+        "hue": 0.0,
+        "saturation": 30.0
+      }
+    },
+    "tint1": {
+      "kind": "vc.fx.adjust.hueSaturation",
+      "pos": [
+        637.0,
+        642.0
+      ],
+      "title": "Hue 95°",
+      "values": {
+        "hue": 95.0,
+        "saturation": 60.0
+      }
+    },
+    "tint2": {
+      "kind": "vc.fx.adjust.hueSaturation",
+      "pos": [
+        953.0,
+        846.0
+      ],
+      "title": "Hue 190°",
+      "values": {
+        "hue": 190.0,
+        "saturation": 60.0
+      }
+    },
+    "tint3": {
+      "kind": "vc.fx.adjust.hueSaturation",
+      "pos": [
+        1283.0,
+        1296.0
+      ],
+      "title": "Hue 275°",
+      "values": {
+        "hue": 275.0,
+        "saturation": 60.0
+      }
+    },
+    "trace": {
+      "kind": "vc.trace",
+      "pos": [
+        0.0,
+        438.0
+      ],
+      "values": {
+        "preset": "6 Colors"
+      }
+    },
+    "vopen": {
+      "kind": "vc.open",
+      "pos": [
+        1706.0,
+        0.0
+      ]
+    },
+    "wall": {
+      "kind": "array.constant",
+      "pos": [
+        1283.0,
+        438.0
+      ],
+      "title": "The wall",
+      "values": {
+        "channels": 3,
+        "height": 570,
+        "value": 0.96,
+        "width": 990
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "project",
+        "port": "doc"
+      },
+      "to": {
+        "node": "footage",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "footage",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seq",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seq",
+        "port": "doc"
+      },
+      "to": {
+        "node": "place",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "place",
+        "port": "doc"
+      },
+      "to": {
+        "node": "still",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "footage",
+        "port": "item"
+      },
+      "to": {
+        "node": "place",
+        "port": "item"
+      }
+    },
+    {
+      "from": {
+        "node": "still",
+        "port": "image"
+      },
+      "to": {
+        "node": "vopen",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "vopen",
+        "port": "doc"
+      },
+      "to": {
+        "node": "trace",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "trace",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tint0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "png0",
+        "port": "image"
+      },
+      "to": {
+        "node": "px0",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "px0",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit0",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "wall",
+        "port": "constant"
+      },
+      "to": {
+        "node": "put0",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit0",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put0",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "trace",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tint1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "png1",
+        "port": "image"
+      },
+      "to": {
+        "node": "px1",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "px1",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit1",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put0",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put1",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit1",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put1",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "trace",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tint2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "png2",
+        "port": "image"
+      },
+      "to": {
+        "node": "px2",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "px2",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit2",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put1",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put2",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit2",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put2",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "trace",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tint3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "png3",
+        "port": "image"
+      },
+      "to": {
+        "node": "px3",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "px3",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "fit3",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "put2",
+        "port": "composite"
+      },
+      "to": {
+        "node": "put3",
+        "port": "canvas"
+      }
+    },
+    {
+      "from": {
+        "node": "fit3",
+        "port": "resized"
+      },
+      "to": {
+        "node": "put3",
+        "port": "block"
+      }
+    },
+    {
+      "from": {
+        "node": "put3",
+        "port": "composite"
+      },
+      "to": {
+        "node": "grid_png",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "grid_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "print",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "print",
+        "port": "doc"
+      },
+      "to": {
+        "node": "film",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "film",
+        "port": "doc"
+      },
+      "to": {
+        "node": "grain",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "grain",
+        "port": "doc"
+      },
+      "to": {
+        "node": "final",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "final",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_final",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "still",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_still",
+        "port": "values"
+      }
+    }
+  ]
+}

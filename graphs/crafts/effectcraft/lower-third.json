@@ -1,0 +1,447 @@
+{
+  "engines": [
+    "effectcraft"
+  ],
+  "meta": {
+    "about": "EffectCraft only. A broadcast lower third: a plum bar wipes in from the left, the name fades up over it, and a thin accent line breathes with an expression. Three frames come out (as it starts, mid-move and settled) so you can check the animation without rendering video. Rename the expert in the Text layer nodes.",
+    "tags": [
+      "motion",
+      "titles"
+    ],
+    "title": "A lower third for the evening news"
+  },
+  "nodes": {
+    "accent": {
+      "kind": "ec.shape",
+      "pos": [
+        1685.0,
+        0.0
+      ],
+      "values": {
+        "fill": "#f5d76e",
+        "kind": "rect",
+        "size": [
+          760,
+          6
+        ]
+      }
+    },
+    "accent_pos": {
+      "kind": "ec.set_property",
+      "pos": [
+        0.0,
+        297.0
+      ],
+      "values": {
+        "layer": "#1",
+        "path": "transform/position",
+        "value": [
+          480,
+          656
+        ]
+      }
+    },
+    "bar": {
+      "kind": "ec.shape",
+      "pos": [
+        674.0,
+        0.0
+      ],
+      "values": {
+        "fill": "#8e4585",
+        "kind": "rounded",
+        "size": [
+          760,
+          120
+        ]
+      }
+    },
+    "bar_in": {
+      "kind": "ec.preset",
+      "pos": [
+        1327.0,
+        0.0
+      ],
+      "values": {
+        "layers": [
+          "#1"
+        ],
+        "preset": "wipeInFromLeft"
+      }
+    },
+    "bar_pos": {
+      "kind": "ec.set_property",
+      "pos": [
+        997.0,
+        0.0
+      ],
+      "values": {
+        "layer": "#1",
+        "path": "transform/position",
+        "value": [
+          480,
+          590
+        ]
+      }
+    },
+    "bg": {
+      "kind": "ec.solid",
+      "pos": [
+        351.0,
+        0.0
+      ],
+      "values": {
+        "color": "#1d2a3a",
+        "name": "Studio"
+      }
+    },
+    "breathe": {
+      "kind": "ec.expression",
+      "pos": [
+        330.0,
+        297.0
+      ],
+      "values": {
+        "expression": "60 + 40 * Math.sin(time * 4)",
+        "layer": "#1",
+        "path": "transform/opacity"
+      }
+    },
+    "comp": {
+      "kind": "ec.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "background": "#10141c",
+        "duration": 4.0,
+        "frameRate": 30.0,
+        "height": 720,
+        "name": "Lower third",
+        "width": 1280
+      }
+    },
+    "f0": {
+      "kind": "ec.export_png",
+      "pos": [
+        1636.0,
+        297.0
+      ],
+      "values": {
+        "scale": 0.5,
+        "time": 0.15
+      }
+    },
+    "f1": {
+      "kind": "ec.export_png",
+      "pos": [
+        1636.0,
+        459.0
+      ],
+      "values": {
+        "scale": 0.5,
+        "time": 0.6
+      }
+    },
+    "f2": {
+      "kind": "ec.export_png",
+      "pos": [
+        1636.0,
+        621.0
+      ],
+      "values": {
+        "scale": 0.5,
+        "time": 2.5
+      }
+    },
+    "layers": {
+      "kind": "ec.info",
+      "pos": [
+        1636.0,
+        783.0
+      ]
+    },
+    "name": {
+      "kind": "ec.text",
+      "pos": [
+        646.0,
+        297.0
+      ],
+      "values": {
+        "fill": "#ffffff",
+        "position": [
+          330,
+          585
+        ],
+        "size": 56.0,
+        "text": "Dr. Ada Plumb"
+      }
+    },
+    "name_in": {
+      "kind": "ec.preset",
+      "pos": [
+        1278.0,
+        297.0
+      ],
+      "values": {
+        "layers": [
+          "#1",
+          "#2"
+        ],
+        "preset": "fadeIn"
+      }
+    },
+    "role": {
+      "kind": "ec.text",
+      "pos": [
+        962.0,
+        297.0
+      ],
+      "values": {
+        "fill": "#f3e6f1",
+        "position": [
+          475,
+          632
+        ],
+        "size": 28.0,
+        "text": "Professor of Stone Fruit, University of Orchards"
+      }
+    },
+    "save_f0": {
+      "engine": "effectcraft",
+      "kind": "file.write",
+      "pos": [
+        1994.0,
+        297.0
+      ],
+      "values": {
+        "basename": "lower-third-0.15s",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_f1": {
+      "engine": "effectcraft",
+      "kind": "file.write",
+      "pos": [
+        1994.0,
+        459.0
+      ],
+      "values": {
+        "basename": "lower-third-0.60s",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_f2": {
+      "engine": "effectcraft",
+      "kind": "file.write",
+      "pos": [
+        1994.0,
+        621.0
+      ],
+      "values": {
+        "basename": "lower-third-2.50s",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_layers": {
+      "engine": "effectcraft",
+      "kind": "file.write",
+      "pos": [
+        1994.0,
+        783.0
+      ],
+      "values": {
+        "basename": "layers",
+        "folder": "out",
+        "overwrite": true
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "comp",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bg",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bar",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bar",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bar_pos",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bar_pos",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bar_in",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bar_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "accent",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "accent",
+        "port": "doc"
+      },
+      "to": {
+        "node": "accent_pos",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "accent_pos",
+        "port": "doc"
+      },
+      "to": {
+        "node": "breathe",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "breathe",
+        "port": "doc"
+      },
+      "to": {
+        "node": "name",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "name",
+        "port": "doc"
+      },
+      "to": {
+        "node": "role",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "role",
+        "port": "doc"
+      },
+      "to": {
+        "node": "name_in",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "name_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f0",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_f0",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "name_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f1",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_f1",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "name_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "f2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "f2",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_f2",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "name_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "layers",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "layers",
+        "port": "layers"
+      },
+      "to": {
+        "node": "save_layers",
+        "port": "values"
+      }
+    }
+  ]
+}

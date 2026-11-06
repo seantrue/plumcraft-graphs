@@ -1,0 +1,945 @@
+{
+  "version": 1,
+  "nodes": {
+    "audio": {
+      "kind": "audio.from_wav",
+      "pos": [
+        2174.0,
+        802.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "bass": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        1534.0,
+        0.0
+      ],
+      "values": {
+        "format": "mono",
+        "instrument": "subtractive_synth",
+        "name": "Bass"
+      },
+      "serial": 2
+    },
+    "bass_down": {
+      "kind": "sc.volume",
+      "pos": [
+        1075.0,
+        313.0
+      ],
+      "values": {
+        "db": -4.0,
+        "tracks": [
+          "Bass"
+        ]
+      },
+      "serial": 1
+    },
+    "bass_notes": {
+      "kind": "sc.notes",
+      "pos": [
+        1951.0,
+        0.0
+      ],
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 1766,
+            "pitch": 48,
+            "start_ticks": 0,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1766,
+            "pitch": 45,
+            "start_ticks": 1920,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1766,
+            "pitch": 41,
+            "start_ticks": 3840,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1766,
+            "pitch": 43,
+            "start_ticks": 5760,
+            "velocity": 96
+          }
+        ],
+        "track": "Bass"
+      },
+      "serial": 2
+    },
+    "echo": {
+      "kind": "sc.delay",
+      "pos": [
+        0.0,
+        313.0
+      ],
+      "values": {
+        "feedback": 30.0,
+        "mix": 22.0,
+        "time": 0.288,
+        "track": "Hook"
+      },
+      "serial": 1
+    },
+    "glue": {
+      "kind": "sc.compressor",
+      "pos": [
+        695.0,
+        313.0
+      ],
+      "values": {
+        "ratio": 3.0,
+        "threshold": -18.0,
+        "track": "Drums"
+      },
+      "serial": 1
+    },
+    "hook": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        733.0,
+        0.0
+      ],
+      "values": {
+        "format": "stereo",
+        "instrument": "subtractive_synth",
+        "name": "Hook"
+      },
+      "serial": 3
+    },
+    "hook_notes": {
+      "kind": "sc.notes",
+      "pos": [
+        1150.0,
+        0.0
+      ],
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 441,
+            "pitch": 72,
+            "start_ticks": 0,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 76,
+            "start_ticks": 480,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 79,
+            "start_ticks": 960,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 883,
+            "pitch": 84,
+            "start_ticks": 1440,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 83,
+            "start_ticks": 2880,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 79,
+            "start_ticks": 3360,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 883,
+            "pitch": 76,
+            "start_ticks": 3840,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 74,
+            "start_ticks": 5280,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 77,
+            "start_ticks": 5760,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 81,
+            "start_ticks": 6240,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1324,
+            "pitch": 79,
+            "start_ticks": 6720,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 441,
+            "pitch": 76,
+            "start_ticks": 8640,
+            "velocity": 96
+          },
+          {
+            "length_ticks": 1324,
+            "pitch": 72,
+            "start_ticks": 9120,
+            "velocity": 96
+          }
+        ],
+        "track": "Hook"
+      },
+      "serial": 3
+    },
+    "kit": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        2334.0,
+        0.0
+      ],
+      "values": {
+        "format": "stereo",
+        "instrument": "drum_synth",
+        "name": "Drums"
+      },
+      "serial": 1
+    },
+    "kit_notes": {
+      "kind": "sc.notes",
+      "pos": [
+        2752.0,
+        0.0
+      ],
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 0,
+            "velocity": 110
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 2400,
+            "velocity": 90
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 960,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 2880,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 0,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 480,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 960,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 1440,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 1920,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 2400,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 2880,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 3360,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 3840,
+            "velocity": 110
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 6240,
+            "velocity": 90
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 4800,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 6720,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 3840,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 4320,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 4800,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 5280,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 5760,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 6240,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 6720,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 7200,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 7680,
+            "velocity": 110
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 10080,
+            "velocity": 90
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 8640,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 10560,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 7680,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 8160,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 8640,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 9120,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 9600,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 10080,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 10560,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 11040,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 11520,
+            "velocity": 110
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 13920,
+            "velocity": 90
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 12480,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 14400,
+            "velocity": 100
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 11520,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 12000,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 12480,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 12960,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 13440,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 13920,
+            "velocity": 70
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 14400,
+            "velocity": 85
+          },
+          {
+            "length_ticks": 120,
+            "pitch": 42,
+            "start_ticks": 14880,
+            "velocity": 70
+          }
+        ],
+        "track": "Drums"
+      },
+      "serial": 1
+    },
+    "look": {
+      "kind": "sc.inspect",
+      "pos": [
+        1763.0,
+        313.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "lufs": {
+      "kind": "audio.loudness",
+      "pos": [
+        2562.0,
+        802.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "midi": {
+      "kind": "sc.export_midi",
+      "pos": [
+        1763.0,
+        432.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "room": {
+      "kind": "sc.reverb",
+      "pos": [
+        343.0,
+        313.0
+      ],
+      "values": {
+        "mix": 25.0,
+        "plugin": "plate_reverb",
+        "track": "Hook"
+      },
+      "serial": 1
+    },
+    "save_look": {
+      "kind": "file.write",
+      "pos": [
+        2174.0,
+        313.0
+      ],
+      "values": {
+        "basename": "session",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "soundcraft"
+    },
+    "save_lufs": {
+      "kind": "file.write",
+      "pos": [
+        2903.0,
+        802.0
+      ],
+      "values": {
+        "basename": "ringtone-loudness",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "audio"
+    },
+    "save_midi": {
+      "kind": "file.write",
+      "pos": [
+        2174.0,
+        476.0
+      ],
+      "values": {
+        "basename": "ringtone",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "soundcraft"
+    },
+    "save_wav": {
+      "kind": "file.write",
+      "pos": [
+        2174.0,
+        639.0
+      ],
+      "values": {
+        "basename": "ringtone",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "soundcraft"
+    },
+    "save_xml": {
+      "kind": "file.write",
+      "pos": [
+        2174.0,
+        900.0
+      ],
+      "values": {
+        "basename": "ringtone",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "soundcraft"
+    },
+    "session": {
+      "kind": "sc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "sample_rate": 48000
+      },
+      "serial": 1
+    },
+    "tempo": {
+      "kind": "sc.tempo",
+      "pos": [
+        382.0,
+        0.0
+      ],
+      "values": {
+        "bpm": 104.0
+      },
+      "serial": 1
+    },
+    "wav": {
+      "kind": "sc.export_wav",
+      "pos": [
+        1763.0,
+        566.0
+      ],
+      "values": {
+        "bit_depth": "24",
+        "normalize": true
+      },
+      "serial": 1
+    },
+    "wide": {
+      "kind": "sc.pan",
+      "pos": [
+        1431.0,
+        313.0
+      ],
+      "values": {
+        "pan": -0.15,
+        "tracks": [
+          "Hook"
+        ]
+      },
+      "serial": 1
+    },
+    "xml": {
+      "kind": "sc.export_musicxml",
+      "pos": [
+        1763.0,
+        768.0
+      ],
+      "values": {},
+      "serial": 1
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "session",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tempo",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tempo",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hook",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hook",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hook_notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hook_notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bass",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bass",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bass_notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bass_notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "kit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "kit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "kit_notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "kit_notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "echo",
+        "port": "doc"
+      },
+      "via": [
+        [
+          3099,
+          221
+        ],
+        [
+          212,
+          267
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "echo",
+        "port": "doc"
+      },
+      "to": {
+        "node": "room",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "room",
+        "port": "doc"
+      },
+      "to": {
+        "node": "glue",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "glue",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bass_down",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bass_down",
+        "port": "doc"
+      },
+      "to": {
+        "node": "wide",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "wide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "wav",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "wide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "midi",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "wide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "xml",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "wide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "look",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "look",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_look",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "wav",
+        "port": "audio"
+      },
+      "to": {
+        "node": "save_wav",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "midi",
+        "port": "midi"
+      },
+      "to": {
+        "node": "save_midi",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "xml",
+        "port": "score"
+      },
+      "to": {
+        "node": "save_xml",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "wav",
+        "port": "audio"
+      },
+      "to": {
+        "node": "audio",
+        "port": "wav"
+      }
+    },
+    {
+      "from": {
+        "node": "audio",
+        "port": "audio"
+      },
+      "to": {
+        "node": "lufs",
+        "port": "audio"
+      }
+    },
+    {
+      "from": {
+        "node": "lufs",
+        "port": "lufs"
+      },
+      "to": {
+        "node": "save_lufs",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "SoundCraft, with the audio engine for the bounce as Audio. Four bars at 104 BPM: a bright synth hook, a bass line, and a drum-synth groove, with a little delay and plate reverb on the hook so it sounds expensive. Bounces a normalized WAV for your phone, and exports MIDI and MusicXML so you can take it into a notation app. Change the notes in the MIDI notes nodes and everything follows. WAV to Audio turns the bounce into Audio, ready for any Audio input; here it's measured with Loudness, and the reading saved.",
+    "tags": [
+      "music",
+      "audio"
+    ],
+    "title": "A ringtone that isn't annoying"
+  },
+  "engines": [
+    "soundcraft",
+    "audio"
+  ]
+}

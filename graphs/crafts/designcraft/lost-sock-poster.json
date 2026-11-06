@@ -1,0 +1,828 @@
+{
+  "version": 1,
+  "nodes": {
+    "band": {
+      "kind": "dsc.shape",
+      "pos": [
+        749.4209,
+        -82.97773
+      ],
+      "values": {
+        "rect": [
+          0,
+          0,
+          612,
+          210
+        ],
+        "shape": "rectangle"
+      },
+      "serial": 1
+    },
+    "band_fill": {
+      "kind": "dsc.fill",
+      "pos": [
+        1135.4209,
+        -82.97773
+      ],
+      "values": {
+        "swatch": "Plum"
+      },
+      "serial": 1
+    },
+    "body": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        1119.4209,
+        782.0225
+      ],
+      "values": {
+        "rect": [
+          54,
+          240,
+          558,
+          470
+        ],
+        "text": "One sock. Left foot, probably. Grey with a hole where the big toe lives.\n\nLast seen entering the washing machine on Saturday with its partner. The partner came out. It did not.\n\nAnswers to nothing. Very attached to me, less so to the other sock."
+      },
+      "serial": 1
+    },
+    "check": {
+      "kind": "dsc.preflight",
+      "pos": [
+        3016.421,
+        782.0225
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "doc": {
+      "kind": "dsc.new",
+      "pos": [
+        0.42089844,
+        -82.97773
+      ],
+      "values": {
+        "margins": 36.0,
+        "pages": 1,
+        "preset": "Letter"
+      },
+      "title": "Lost sock"
+    },
+    "head": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        1465.4209,
+        -82.97773
+      ],
+      "values": {
+        "rect": [
+          36,
+          30,
+          576,
+          200
+        ],
+        "text": "LOST"
+      },
+      "serial": 2
+    },
+    "head_style": {
+      "kind": "dsc.run",
+      "pos": [
+        1851.4209,
+        -82.97773
+      ],
+      "values": {
+        "command": "type.char",
+        "params": {
+          "fill": "[Paper]",
+          "size": 120
+        }
+      },
+      "title": "Headline type"
+    },
+    "info": {
+      "kind": "dsc.file_info",
+      "pos": [
+        2657.421,
+        782.0225
+      ],
+      "values": {
+        "author": "Morgan Crumb",
+        "documentTitle": "Lost: one sock",
+        "keywords": "sock, laundry, reward"
+      },
+      "serial": 1
+    },
+    "law": {
+      "kind": "dsc.equation",
+      "pos": [
+        1898.4209,
+        782.0225
+      ],
+      "values": {
+        "latex": "P(\\text{sock}_{\\text{lost}}) = 1 - \\prod_{i=1}^{n} (1 - p_{\\text{wash}})",
+        "size": 20.0,
+        "x": 150.0,
+        "y": 200.0
+      },
+      "serial": 1
+    },
+    "pdf": {
+      "kind": "dsc.export_pdf",
+      "pos": [
+        3016.421,
+        920.0225
+      ],
+      "values": {
+        "standard": "x4"
+      },
+      "serial": 1
+    },
+    "plum": {
+      "kind": "dsc.swatch",
+      "pos": [
+        366.4209,
+        -82.97773
+      ],
+      "values": {
+        "color": "#8e4585",
+        "name": "Plum"
+      },
+      "serial": 1
+    },
+    "png": {
+      "kind": "dsc.export_png",
+      "pos": [
+        3016.421,
+        1375.0221
+      ],
+      "values": {
+        "page": 0,
+        "scale": 1.0
+      },
+      "serial": 1
+    },
+    "reward": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        2263.421,
+        782.0225
+      ],
+      "values": {
+        "rect": [
+          54,
+          600,
+          558,
+          630
+        ],
+        "text": "REWARD: the other sock (no longer needed)."
+      },
+      "serial": 11
+    },
+    "save_check": {
+      "kind": "file.write",
+      "pos": [
+        3461.421,
+        782.0225
+      ],
+      "values": {
+        "basename": "preflight",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "designcraft"
+    },
+    "save_pdf": {
+      "kind": "file.write",
+      "pos": [
+        3461.421,
+        945.0225
+      ],
+      "values": {
+        "basename": "lost-sock",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "designcraft"
+    },
+    "save_png": {
+      "kind": "file.write",
+      "pos": [
+        3461.421,
+        1375.0221
+      ],
+      "values": {
+        "basename": "lost-sock",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "designcraft"
+    },
+    "science": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        1505.4209,
+        782.0225
+      ],
+      "values": {
+        "rect": [
+          54,
+          480,
+          558,
+          580
+        ],
+        "text": "The science: "
+      },
+      "serial": 12
+    },
+    "tab0": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        2244.421,
+        -82.97773
+      ],
+      "values": {
+        "rect": [
+          44,
+          660,
+          154,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 3
+    },
+    "tab1": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        2993.421,
+        -82.97773
+      ],
+      "values": {
+        "rect": [
+          110,
+          660,
+          220,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 4
+    },
+    "tab2": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        0.42089844,
+        409.02222
+      ],
+      "values": {
+        "rect": [
+          176,
+          660,
+          286,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 5
+    },
+    "tab3": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        749.4209,
+        409.02222
+      ],
+      "values": {
+        "rect": [
+          242,
+          660,
+          352,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 6
+    },
+    "tab4": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        1498.4209,
+        409.02222
+      ],
+      "values": {
+        "rect": [
+          308,
+          660,
+          418,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 7
+    },
+    "tab5": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        2246.421,
+        409.02222
+      ],
+      "values": {
+        "rect": [
+          374,
+          660,
+          484,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 8
+    },
+    "tab6": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        2995.421,
+        409.02222
+      ],
+      "values": {
+        "rect": [
+          440,
+          660,
+          550,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 9
+    },
+    "tab7": {
+      "kind": "dsc.text_frame",
+      "pos": [
+        363.4209,
+        782.0225
+      ],
+      "values": {
+        "rect": [
+          506,
+          660,
+          616,
+          690
+        ],
+        "text": "Morgan 555-0142"
+      },
+      "serial": 10
+    },
+    "turn0": {
+      "kind": "dsc.rotate",
+      "pos": [
+        2630.421,
+        -82.97773
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:10"
+      },
+      "serial": 1
+    },
+    "turn1": {
+      "kind": "dsc.rotate",
+      "pos": [
+        3379.421,
+        -82.97773
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:12"
+      },
+      "serial": 2
+    },
+    "turn2": {
+      "kind": "dsc.rotate",
+      "pos": [
+        386.4209,
+        409.02222
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:14"
+      },
+      "serial": 3
+    },
+    "turn3": {
+      "kind": "dsc.rotate",
+      "pos": [
+        1135.4209,
+        409.02222
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:16"
+      },
+      "serial": 4
+    },
+    "turn4": {
+      "kind": "dsc.rotate",
+      "pos": [
+        1884.4209,
+        409.02222
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:18"
+      },
+      "serial": 5
+    },
+    "turn5": {
+      "kind": "dsc.rotate",
+      "pos": [
+        2632.421,
+        409.02222
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:20"
+      },
+      "serial": 6
+    },
+    "turn6": {
+      "kind": "dsc.rotate",
+      "pos": [
+        0.42089844,
+        782.0225
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:22"
+      },
+      "serial": 7
+    },
+    "turn7": {
+      "kind": "dsc.rotate",
+      "pos": [
+        756.4209,
+        782.0225
+      ],
+      "values": {
+        "angle": 90.0,
+        "select": "ids:24"
+      },
+      "serial": 8
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "doc",
+        "port": "doc"
+      },
+      "to": {
+        "node": "plum",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "plum",
+        "port": "doc"
+      },
+      "to": {
+        "node": "band",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "band",
+        "port": "doc"
+      },
+      "to": {
+        "node": "band_fill",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "band_fill",
+        "port": "doc"
+      },
+      "to": {
+        "node": "head",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "head",
+        "port": "doc"
+      },
+      "to": {
+        "node": "head_style",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "head_style",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab2",
+        "port": "doc"
+      },
+      "via": [
+        [
+          3464,
+          224
+        ],
+        [
+          107,
+          372
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "tab2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab5",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab5",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn5",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn5",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab6",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab6",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn6",
+        "port": "doc"
+      },
+      "via": [
+        [
+          3110,
+          730
+        ],
+        [
+          142,
+          734
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "turn6",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tab7",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tab7",
+        "port": "doc"
+      },
+      "to": {
+        "node": "turn7",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "turn7",
+        "port": "doc"
+      },
+      "to": {
+        "node": "body",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "body",
+        "port": "doc"
+      },
+      "to": {
+        "node": "science",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "science",
+        "port": "doc"
+      },
+      "to": {
+        "node": "law",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "law",
+        "port": "doc"
+      },
+      "to": {
+        "node": "reward",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "reward",
+        "port": "doc"
+      },
+      "to": {
+        "node": "info",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "info",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "info",
+        "port": "doc"
+      },
+      "to": {
+        "node": "check",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "info",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "check",
+        "port": "issues"
+      },
+      "to": {
+        "node": "save_check",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "DesignCraft only. A Letter-size lost-property poster with a plum swatch, a big headline, a description, an equation for the statistically inevitable, and eight tear-off phone tabs along the bottom, each rotated a quarter turn. Preflight reports any problems before it goes to the printer, then a PDF/X-4 and a PNG proof come out.",
+    "tags": [
+      "print",
+      "poster"
+    ],
+    "title": "Lost: one sock"
+  },
+  "engines": [
+    "designcraft"
+  ]
+}

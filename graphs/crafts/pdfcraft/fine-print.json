@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "nodes": {
+    "a11y": {
+      "kind": "pdf.a11y_check",
+      "pos": [
+        332.0,
+        0.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "indemnify": {
+      "kind": "pdf.find",
+      "pos": [
+        332.0,
+        173.0
+      ],
+      "values": {
+        "query": "indemnify"
+      },
+      "serial": 1
+    },
+    "info": {
+      "kind": "pdf.info",
+      "pos": [
+        332.0,
+        356.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "links": {
+      "kind": "pdf.links_from_urls",
+      "pos": [
+        332.0,
+        454.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "open": {
+      "kind": "pdf.open",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "file": "../../../assets/documents/lawnmower-terms.pdf"
+      },
+      "serial": 1
+    },
+    "pages": {
+      "kind": "pdf.header_footer",
+      "pos": [
+        1112.0,
+        519.0
+      ],
+      "values": {
+        "font_size": 9,
+        "footer_center": "<<Page 1 of n>>",
+        "header_center": "Lawnmower terms, annotated"
+      },
+      "serial": 1
+    },
+    "pdf": {
+      "kind": "pdf.export_pdf",
+      "pos": [
+        1924.0,
+        519.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "save_a11y": {
+      "kind": "file.write",
+      "pos": [
+        737.0,
+        0.0
+      ],
+      "values": {
+        "basename": "accessibility",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "pdfcraft"
+    },
+    "save_find": {
+      "kind": "file.write",
+      "pos": [
+        737.0,
+        173.0
+      ],
+      "values": {
+        "basename": "indemnify",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "pdfcraft"
+    },
+    "save_info": {
+      "kind": "file.write",
+      "pos": [
+        737.0,
+        356.0
+      ],
+      "values": {
+        "basename": "document-info",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "pdfcraft"
+    },
+    "save_pdf": {
+      "kind": "file.write",
+      "pos": [
+        2288.0,
+        519.0
+      ],
+      "values": {
+        "basename": "terms-annotated",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "pdfcraft"
+    },
+    "save_txt": {
+      "kind": "file.write",
+      "pos": [
+        2288.0,
+        682.0
+      ],
+      "values": {
+        "basename": "terms",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "pdfcraft"
+    },
+    "save_words": {
+      "kind": "file.write",
+      "pos": [
+        737.0,
+        886.0
+      ],
+      "values": {
+        "basename": "word-count",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 6,
+      "engine": "pdfcraft"
+    },
+    "stamp": {
+      "kind": "pdf.watermark",
+      "pos": [
+        737.0,
+        519.0
+      ],
+      "values": {
+        "opacity": 0.18,
+        "rotation": 35,
+        "text": "READ ME. NOBODY DOES."
+      },
+      "serial": 1
+    },
+    "tint": {
+      "kind": "pdf.background",
+      "pos": [
+        1517.0,
+        519.0
+      ],
+      "values": {
+        "color": "#fbf7ee"
+      },
+      "serial": 1
+    },
+    "txt": {
+      "kind": "pdf.export_text",
+      "pos": [
+        1924.0,
+        635.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "words": {
+      "kind": "pdf.word_count",
+      "pos": [
+        332.0,
+        570.0
+      ],
+      "values": {},
+      "serial": 1
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "links",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "links",
+        "port": "doc"
+      },
+      "to": {
+        "node": "stamp",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "stamp",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pages",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pages",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tint",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "words",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "indemnify",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "a11y",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "info",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tint",
+        "port": "doc"
+      },
+      "to": {
+        "node": "txt",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "txt",
+        "port": "text"
+      },
+      "to": {
+        "node": "save_txt",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "indemnify",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_find",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "words",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_words",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "info",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_info",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "a11y",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_a11y",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "PdfCraft only. Opens a contract nobody reads (the terms for borrowing a neighbour's lawnmower), counts the words and every 'indemnify', stamps it READ ME, numbers the pages, makes its URLs clickable and checks its accessibility. The JSON answers the question you should ask of any contract: how many times does it make you pay for things?",
+    "tags": [
+      "documents",
+      "audit"
+    ],
+    "title": "Read the fine print"
+  },
+  "engines": [
+    "pdfcraft"
+  ]
+}

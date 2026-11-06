@@ -1,0 +1,696 @@
+{
+  "engines": [
+    "soundcraft",
+    "audio",
+    "gridcraft"
+  ],
+  "meta": {
+    "about": "SoundCraft → audio engine → GridCraft. SoundCraft plays sixteen beats at 100 BPM from a drummer who drifts ahead of the click; the audio engine finds every hit in the bounce, and GridCraft lines each one up against where it should have landed, charts the error in milliseconds and gives a verdict. Swap the notes for a real take (Load audio) to judge a real drummer.",
+    "tags": [
+      "music",
+      "analysis",
+      "audio-to-data"
+    ],
+    "title": "Is the drummer rushing?"
+  },
+  "nodes": {
+    "big": {
+      "kind": "gc.run",
+      "pos": [
+        561.0,
+        792.0
+      ],
+      "title": "Chart size",
+      "values": {
+        "command": "chart.set",
+        "params": {
+          "height": 240,
+          "legend": "none",
+          "title": "How early (−) or late (+) each hit landed, ms",
+          "width": 400,
+          "xTitle": "Beat",
+          "yTitle": "ms"
+        }
+      }
+    },
+    "book": {
+      "kind": "gc.new",
+      "pos": [
+        962.0,
+        276.0
+      ]
+    },
+    "bounce": {
+      "kind": "sc.export_wav",
+      "pos": [
+        0.0,
+        276.0
+      ],
+      "values": {
+        "bit_depth": "24",
+        "normalize": true
+      }
+    },
+    "calc": {
+      "kind": "gc.write_range",
+      "pos": [
+        1643.0,
+        276.0
+      ],
+      "title": "Compare with the click",
+      "values": {
+        "range": "D1",
+        "values": [
+          [
+            "Beat",
+            "Should be (s)",
+            "Error (ms)"
+          ],
+          [
+            "=ROUND(A2/0.6,0)",
+            "=D2*0.6",
+            "=ROUND((A2-E2)*1000,1)"
+          ],
+          [
+            "=ROUND(A3/0.6,0)",
+            "=D3*0.6",
+            "=ROUND((A3-E3)*1000,1)"
+          ],
+          [
+            "=ROUND(A4/0.6,0)",
+            "=D4*0.6",
+            "=ROUND((A4-E4)*1000,1)"
+          ],
+          [
+            "=ROUND(A5/0.6,0)",
+            "=D5*0.6",
+            "=ROUND((A5-E5)*1000,1)"
+          ],
+          [
+            "=ROUND(A6/0.6,0)",
+            "=D6*0.6",
+            "=ROUND((A6-E6)*1000,1)"
+          ],
+          [
+            "=ROUND(A7/0.6,0)",
+            "=D7*0.6",
+            "=ROUND((A7-E7)*1000,1)"
+          ],
+          [
+            "=ROUND(A8/0.6,0)",
+            "=D8*0.6",
+            "=ROUND((A8-E8)*1000,1)"
+          ],
+          [
+            "=ROUND(A9/0.6,0)",
+            "=D9*0.6",
+            "=ROUND((A9-E9)*1000,1)"
+          ],
+          [
+            "=ROUND(A10/0.6,0)",
+            "=D10*0.6",
+            "=ROUND((A10-E10)*1000,1)"
+          ],
+          [
+            "=ROUND(A11/0.6,0)",
+            "=D11*0.6",
+            "=ROUND((A11-E11)*1000,1)"
+          ],
+          [
+            "=ROUND(A12/0.6,0)",
+            "=D12*0.6",
+            "=ROUND((A12-E12)*1000,1)"
+          ],
+          [
+            "=ROUND(A13/0.6,0)",
+            "=D13*0.6",
+            "=ROUND((A13-E13)*1000,1)"
+          ],
+          [
+            "=ROUND(A14/0.6,0)",
+            "=D14*0.6",
+            "=ROUND((A14-E14)*1000,1)"
+          ],
+          [
+            "=ROUND(A15/0.6,0)",
+            "=D15*0.6",
+            "=ROUND((A15-E15)*1000,1)"
+          ],
+          [
+            "=ROUND(A16/0.6,0)",
+            "=D16*0.6",
+            "=ROUND((A16-E16)*1000,1)"
+          ],
+          [
+            "=ROUND(A17/0.6,0)",
+            "=D17*0.6",
+            "=ROUND((A17-E17)*1000,1)"
+          ]
+        ]
+      }
+    },
+    "chart": {
+      "kind": "gc.chart",
+      "pos": [
+        0.0,
+        792.0
+      ],
+      "title": "How early (−) or late (+) each hit landed, ms",
+      "values": {
+        "at": "D20",
+        "range": "F1:F17",
+        "type": "column"
+      }
+    },
+    "fit": {
+      "kind": "gc.run",
+      "pos": [
+        1191.0,
+        792.0
+      ],
+      "title": "AutoFit",
+      "values": {
+        "command": "home.autofitColumnWidth",
+        "params": {
+          "cols": "A:I"
+        }
+      }
+    },
+    "hits": {
+      "kind": "audio.transients",
+      "pos": [
+        646.0,
+        438.0
+      ],
+      "values": {
+        "sensitivity": 0.5
+      }
+    },
+    "hits_in": {
+      "kind": "gc.write_range",
+      "pos": [
+        1299.0,
+        276.0
+      ],
+      "title": "Write the hits",
+      "values": {
+        "range": "A1"
+      }
+    },
+    "kit": {
+      "kind": "sc.instrument_track",
+      "pos": [
+        604.0,
+        0.0
+      ],
+      "values": {
+        "format": "mono",
+        "instrument": "drum_synth",
+        "name": "Drums"
+      }
+    },
+    "land": {
+      "kind": "gc.run",
+      "pos": [
+        877.0,
+        792.0
+      ],
+      "title": "Landscape",
+      "values": {
+        "command": "pageLayout.orientation",
+        "params": {
+          "orientation": "landscape"
+        }
+      }
+    },
+    "lufs": {
+      "kind": "audio.loudness",
+      "pos": [
+        646.0,
+        558.0
+      ]
+    },
+    "pdf": {
+      "kind": "gc.export_pdf",
+      "pos": [
+        1505.0,
+        792.0
+      ]
+    },
+    "rows": {
+      "engine": "audio",
+      "kind": "seq.table_rows",
+      "pos": [
+        962.0,
+        438.0
+      ]
+    },
+    "save_lufs": {
+      "engine": "audio",
+      "kind": "file.write",
+      "pos": [
+        962.0,
+        558.0
+      ],
+      "values": {
+        "basename": "loudness-lufs",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_pdf": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        1828.0,
+        792.0
+      ],
+      "values": {
+        "basename": "timing",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_say": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        1828.0,
+        954.0
+      ],
+      "values": {
+        "basename": "verdict",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_wav": {
+      "engine": "soundcraft",
+      "kind": "file.write",
+      "pos": [
+        316.0,
+        276.0
+      ],
+      "values": {
+        "basename": "the-take",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "say": {
+      "kind": "gc.evaluate",
+      "pos": [
+        1505.0,
+        912.0
+      ],
+      "title": "The verdict",
+      "values": {
+        "formula": "=B22"
+      }
+    },
+    "session": {
+      "kind": "sc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "sample_rate": 48000
+      }
+    },
+    "take": {
+      "kind": "sc.notes",
+      "pos": [
+        962.0,
+        0.0
+      ],
+      "title": "The take",
+      "values": {
+        "notes": [
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 956,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 1912,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 2868,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 3830,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 4780,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 5736,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 6692,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 7654,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 8604,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 9560,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 10516,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 11478,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 12428,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 13384,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 38,
+            "start_ticks": 14340,
+            "velocity": 112
+          },
+          {
+            "length_ticks": 200,
+            "pitch": 36,
+            "start_ticks": 15302,
+            "velocity": 112
+          }
+        ],
+        "track": "Drums"
+      }
+    },
+    "tempo": {
+      "kind": "sc.tempo",
+      "pos": [
+        323.0,
+        0.0
+      ],
+      "values": {
+        "bpm": 100.0
+      }
+    },
+    "verdict": {
+      "kind": "gc.write_range",
+      "pos": [
+        2043.0,
+        276.0
+      ],
+      "title": "Verdict",
+      "values": {
+        "range": "A20",
+        "values": [
+          [
+            "Mean error (ms)",
+            "=ROUND(AVERAGE(F2:F17),1)"
+          ],
+          [
+            "Worst (ms)",
+            "=MIN(F2:F17)"
+          ],
+          [
+            "Verdict",
+            "=IF(B20<-10,\"Rushing: count them in slower\",IF(B20>10,\"Dragging: more coffee\",\"In the pocket\"))"
+          ]
+        ]
+      }
+    },
+    "wav": {
+      "kind": "audio.from_wav",
+      "pos": [
+        316.0,
+        438.0
+      ]
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "session",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tempo",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tempo",
+        "port": "doc"
+      },
+      "to": {
+        "node": "kit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "kit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "take",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "take",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bounce",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bounce",
+        "port": "audio"
+      },
+      "to": {
+        "node": "wav",
+        "port": "wav"
+      }
+    },
+    {
+      "from": {
+        "node": "wav",
+        "port": "audio"
+      },
+      "to": {
+        "node": "hits",
+        "port": "audio"
+      }
+    },
+    {
+      "from": {
+        "node": "hits",
+        "port": "onsets"
+      },
+      "to": {
+        "node": "rows",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "wav",
+        "port": "audio"
+      },
+      "to": {
+        "node": "lufs",
+        "port": "audio"
+      }
+    },
+    {
+      "from": {
+        "node": "rows",
+        "port": "rows"
+      },
+      "to": {
+        "node": "hits_in",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "book",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hits_in",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hits_in",
+        "port": "doc"
+      },
+      "to": {
+        "node": "calc",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "calc",
+        "port": "doc"
+      },
+      "to": {
+        "node": "verdict",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "verdict",
+        "port": "doc"
+      },
+      "to": {
+        "node": "chart",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "chart",
+        "port": "doc"
+      },
+      "to": {
+        "node": "big",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "big",
+        "port": "doc"
+      },
+      "to": {
+        "node": "land",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "say",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "say",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_say",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "lufs",
+        "port": "lufs"
+      },
+      "to": {
+        "node": "save_lufs",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "bounce",
+        "port": "audio"
+      },
+      "to": {
+        "node": "save_wav",
+        "port": "values"
+      }
+    }
+  ]
+}

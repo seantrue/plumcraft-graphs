@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "nodes": {
+    "credit": {
+      "kind": "fc.text",
+      "pos": [
+        341.0,
+        461.0
+      ],
+      "values": {
+        "position": [
+          560,
+          430
+        ],
+        "seconds": 6.0,
+        "size": 48.0,
+        "text": "presents"
+      },
+      "serial": 2
+    },
+    "footage": {
+      "kind": "fc.demo_footage",
+      "pos": [
+        373.0,
+        0.0
+      ],
+      "values": {
+        "scene": "OceanSunset"
+      },
+      "serial": 1
+    },
+    "gif": {
+      "kind": "fc.export_gif",
+      "pos": [
+        1022.0,
+        461.0
+      ],
+      "values": {
+        "scale": 0.25
+      },
+      "serial": 1
+    },
+    "look": {
+      "kind": "fc.look",
+      "pos": [
+        1548.0,
+        0.0
+      ],
+      "values": {
+        "name": "Golden Dusk"
+      },
+      "serial": 1
+    },
+    "mark": {
+      "kind": "fc.marker",
+      "pos": [
+        679.0,
+        461.0
+      ],
+      "values": {
+        "comment": "Logo lands here",
+        "name": "Title in"
+      },
+      "serial": 1
+    },
+    "mp4": {
+      "kind": "fc.export_mp4",
+      "pos": [
+        1022.0,
+        726.0
+      ],
+      "values": {
+        "crf": 23,
+        "scale": 0.5
+      },
+      "serial": 1
+    },
+    "place": {
+      "kind": "fc.place",
+      "pos": [
+        1146.0,
+        0.0
+      ],
+      "values": {
+        "seconds": 0.0,
+        "track": "V1"
+      },
+      "serial": 1
+    },
+    "project": {
+      "kind": "fc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "name": "Plum Pictures ident"
+      },
+      "serial": 1
+    },
+    "save_gif": {
+      "kind": "file.write",
+      "pos": [
+        1429.0,
+        461.0
+      ],
+      "values": {
+        "basename": "plum-pictures",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "filmcraft"
+    },
+    "save_mp4": {
+      "kind": "file.write",
+      "pos": [
+        1429.0,
+        726.0
+      ],
+      "values": {
+        "basename": "plum-pictures",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "filmcraft"
+    },
+    "save_png": {
+      "kind": "file.write",
+      "pos": [
+        1429.0,
+        1282.0
+      ],
+      "values": {
+        "basename": "plum-pictures-frame",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "filmcraft"
+    },
+    "save_seq": {
+      "kind": "file.write",
+      "pos": [
+        1429.0,
+        1117.0
+      ],
+      "values": {
+        "basename": "sequence",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "filmcraft"
+    },
+    "seq": {
+      "kind": "fc.sequence",
+      "pos": [
+        759.0,
+        0.0
+      ],
+      "values": {
+        "fps": 25.0,
+        "height": 720,
+        "name": "Ident",
+        "width": 1280
+      },
+      "serial": 1
+    },
+    "seqinfo": {
+      "kind": "fc.inspect",
+      "pos": [
+        1022.0,
+        1117.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "still": {
+      "kind": "fc.export_png",
+      "pos": [
+        1022.0,
+        1239.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "title": {
+      "kind": "fc.text",
+      "pos": [
+        0.0,
+        461.0
+      ],
+      "values": {
+        "position": [
+          215,
+          330
+        ],
+        "seconds": 6.0,
+        "size": 110.0,
+        "text": "PLUM PICTURES"
+      },
+      "serial": 1
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "project",
+        "port": "doc"
+      },
+      "to": {
+        "node": "footage",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "footage",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seq",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seq",
+        "port": "doc"
+      },
+      "to": {
+        "node": "place",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "place",
+        "port": "doc"
+      },
+      "to": {
+        "node": "look",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "look",
+        "port": "doc"
+      },
+      "to": {
+        "node": "title",
+        "port": "doc"
+      },
+      "via": [
+        [
+          1655,
+          389
+        ],
+        [
+          -47,
+          439
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "credit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "credit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "mark",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "footage",
+        "port": "item"
+      },
+      "to": {
+        "node": "place",
+        "port": "item"
+      }
+    },
+    {
+      "from": {
+        "node": "mark",
+        "port": "doc"
+      },
+      "to": {
+        "node": "mp4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "mark",
+        "port": "doc"
+      },
+      "to": {
+        "node": "gif",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "mark",
+        "port": "doc"
+      },
+      "to": {
+        "node": "still",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "mark",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seqinfo",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seqinfo",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_seq",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "mp4",
+        "port": "video"
+      },
+      "to": {
+        "node": "save_mp4",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "gif",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_gif",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "still",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "FilmCraft only. Plum Pictures' opening ident: demo sunset footage on a sequence, a Golden Dusk look, a title over it, then an MP4, a GIF for the group chat and a poster frame. Swap the scene (Aurora, CityNight, Dunes, Plasma, Forest) or the words.",
+    "tags": [
+      "video",
+      "titles"
+    ],
+    "title": "A studio ident in ten seconds"
+  },
+  "engines": [
+    "filmcraft"
+  ]
+}

@@ -1,0 +1,12 @@
+out/
+out-*/
+graphs/**/out/
+.DS_Store
+# scratch: only notes are tracked
+claude-debug/*
+!claude-debug/*.md
+# the home-server status graph stays local: private data
+assets/estate/
+scripts/estate-snapshot
+graphs/crossings/server-month.json
+docs/images/server-month.jpg

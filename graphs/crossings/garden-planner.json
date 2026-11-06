@@ -1,0 +1,980 @@
+{
+  "engines": [
+    "gridcraft",
+    "cadcraft",
+    "vectorcraft"
+  ],
+  "meta": {
+    "about": "GridCraft → CadCraft → VectorCraft. The beds live in a spreadsheet (position, size), which also works out the area, the soil each bed needs at 30 cm deep and how many 50-litre bags of compost to buy. GridCraft computes each bed's corners, CadCraft draws them inside the fence as a dimensioned plan, and VectorCraft turns the drawing into a friendly hand-drawn plan to stick on the shed door. Move a bed in the spreadsheet and the plan follows.",
+    "tags": [
+      "garden",
+      "planning",
+      "data-to-drawing"
+    ],
+    "title": "Garden planner: from a spreadsheet to a plan"
+  },
+  "nodes": {
+    "bags": {
+      "kind": "gc.evaluate",
+      "pos": [
+        1974.0,
+        387.0
+      ],
+      "title": "Bags to buy",
+      "values": {
+        "formula": "=H6"
+      }
+    },
+    "bed0": {
+      "kind": "cad.pline",
+      "pos": [
+        2332.0,
+        0.0
+      ],
+      "title": "Draw Tomatoes",
+      "values": {
+        "closed": true
+      }
+    },
+    "bed1": {
+      "kind": "cad.pline",
+      "pos": [
+        2669.0,
+        0.0
+      ],
+      "title": "Draw Beans",
+      "values": {
+        "closed": true
+      }
+    },
+    "bed2": {
+      "kind": "cad.pline",
+      "pos": [
+        3006.0,
+        0.0
+      ],
+      "title": "Draw Salad",
+      "values": {
+        "closed": true
+      }
+    },
+    "bed3": {
+      "kind": "cad.pline",
+      "pos": [
+        3343.0,
+        0.0
+      ],
+      "title": "Draw Herbs",
+      "values": {
+        "closed": true
+      }
+    },
+    "beds_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        1974.0,
+        0.0
+      ],
+      "values": {
+        "color": "green",
+        "current": true,
+        "name": "Beds"
+      }
+    },
+    "book": {
+      "kind": "gc.new",
+      "pos": [
+        0.0,
+        0.0
+      ]
+    },
+    "cad_pdf": {
+      "kind": "cad.export_pdf",
+      "pos": [
+        1030.0,
+        903.0
+      ]
+    },
+    "cad_svg": {
+      "kind": "cad.export_svg",
+      "pos": [
+        1030.0,
+        783.0
+      ]
+    },
+    "corner_cells": {
+      "kind": "gc.write_range",
+      "pos": [
+        644.0,
+        120.0
+      ],
+      "title": "Corner formulas",
+      "values": {
+        "range": "J1",
+        "values": [
+          [
+            "Corners (from the bed table)",
+            ""
+          ],
+          [
+            "=B2",
+            "=C2"
+          ],
+          [
+            "=B2+D2",
+            "=C2"
+          ],
+          [
+            "=B2+D2",
+            "=C2+E2"
+          ],
+          [
+            "=B2",
+            "=C2+E2"
+          ],
+          [
+            "=B3",
+            "=C3"
+          ],
+          [
+            "=B3+D3",
+            "=C3"
+          ],
+          [
+            "=B3+D3",
+            "=C3+E3"
+          ],
+          [
+            "=B3",
+            "=C3+E3"
+          ],
+          [
+            "=B4",
+            "=C4"
+          ],
+          [
+            "=B4+D4",
+            "=C4"
+          ],
+          [
+            "=B4+D4",
+            "=C4+E4"
+          ],
+          [
+            "=B4",
+            "=C4+E4"
+          ],
+          [
+            "=B5",
+            "=C5"
+          ],
+          [
+            "=B5+D5",
+            "=C5"
+          ],
+          [
+            "=B5+D5",
+            "=C5+E5"
+          ],
+          [
+            "=B5",
+            "=C5+E5"
+          ]
+        ]
+      }
+    },
+    "d_h": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        672.0,
+        783.0
+      ],
+      "values": {
+        "at": [
+          8400,
+          2500.0
+        ],
+        "p1": [
+          8000,
+          0
+        ],
+        "p2": [
+          8000,
+          5000
+        ]
+      }
+    },
+    "d_w": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        314.0,
+        783.0
+      ],
+      "values": {
+        "at": [
+          4000.0,
+          5400
+        ],
+        "p1": [
+          0,
+          5000
+        ],
+        "p2": [
+          8000,
+          5000
+        ]
+      }
+    },
+    "dims": {
+      "kind": "cad.layer",
+      "pos": [
+        0.0,
+        783.0
+      ],
+      "values": {
+        "color": "yellow",
+        "current": true,
+        "name": "Dimensions"
+      }
+    },
+    "fence": {
+      "kind": "cad.rectangle",
+      "pos": [
+        1346.0,
+        0.0
+      ],
+      "values": {
+        "p1": [
+          0,
+          0
+        ],
+        "p2": [
+          8000,
+          5000
+        ]
+      }
+    },
+    "fence_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        995.0,
+        0.0
+      ],
+      "values": {
+        "color": "white",
+        "current": true,
+        "name": "Fence"
+      }
+    },
+    "fit": {
+      "kind": "gc.run",
+      "pos": [
+        1346.0,
+        204.0
+      ],
+      "title": "AutoFit",
+      "values": {
+        "command": "home.autofitColumnWidth",
+        "params": {
+          "cols": "A:H"
+        }
+      }
+    },
+    "fmt": {
+      "kind": "gc.format_as_table",
+      "pos": [
+        995.0,
+        183.0
+      ],
+      "values": {
+        "range": "A1:H6",
+        "style": "TableStyleLight11"
+      }
+    },
+    "gate": {
+      "kind": "cad.text",
+      "pos": [
+        1660.0,
+        0.0
+      ],
+      "values": {
+        "at": [
+          4000.0,
+          -350
+        ],
+        "height": 180.0,
+        "justify": "MC",
+        "text": "GATE"
+      }
+    },
+    "ink": {
+      "kind": "vc.stroke",
+      "pos": [
+        2104.0,
+        783.0
+      ],
+      "values": {
+        "cap": "round",
+        "join": "round",
+        "weight": 3.0
+      }
+    },
+    "land": {
+      "kind": "gc.run",
+      "pos": [
+        1660.0,
+        225.0
+      ],
+      "title": "Landscape",
+      "values": {
+        "command": "pageLayout.orientation",
+        "params": {
+          "orientation": "landscape"
+        }
+      }
+    },
+    "plan": {
+      "kind": "cad.new",
+      "pos": [
+        644.0,
+        0.0
+      ],
+      "values": {
+        "metric": true
+      }
+    },
+    "read0": {
+      "kind": "gc.read",
+      "pos": [
+        1974.0,
+        225.0
+      ],
+      "title": "Tomatoes corners",
+      "values": {
+        "range": "J2:K5"
+      }
+    },
+    "read1": {
+      "kind": "gc.read",
+      "pos": [
+        2332.0,
+        225.0
+      ],
+      "title": "Beans corners",
+      "values": {
+        "range": "J6:K9"
+      }
+    },
+    "read2": {
+      "kind": "gc.read",
+      "pos": [
+        2669.0,
+        225.0
+      ],
+      "title": "Salad corners",
+      "values": {
+        "range": "J10:K13"
+      }
+    },
+    "read3": {
+      "kind": "gc.read",
+      "pos": [
+        3006.0,
+        225.0
+      ],
+      "title": "Herbs corners",
+      "values": {
+        "range": "J14:K17"
+      }
+    },
+    "rough": {
+      "kind": "vc.fx.distort.roughen",
+      "pos": [
+        2418.0,
+        783.0
+      ],
+      "values": {
+        "detail": 6.0,
+        "points": "smooth",
+        "seed": 11,
+        "size": 0.6
+      }
+    },
+    "save_bags": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        2332.0,
+        387.0
+      ],
+      "values": {
+        "basename": "compost-bags",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_cad": {
+      "engine": "cadcraft",
+      "kind": "file.write",
+      "pos": [
+        1346.0,
+        987.0
+      ],
+      "values": {
+        "basename": "plan-dimensioned",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_png": {
+      "engine": "vectorcraft",
+      "kind": "file.write",
+      "pos": [
+        3048.0,
+        783.0
+      ],
+      "values": {
+        "basename": "plan-for-the-shed",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_sheet": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        2332.0,
+        549.0
+      ],
+      "values": {
+        "basename": "beds",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_svg": {
+      "engine": "vectorcraft",
+      "kind": "file.write",
+      "pos": [
+        3048.0,
+        987.0
+      ],
+      "values": {
+        "basename": "plan-for-the-shed",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "sheet_pdf": {
+      "kind": "gc.export_pdf",
+      "pos": [
+        1974.0,
+        507.0
+      ]
+    },
+    "table": {
+      "kind": "gc.write_range",
+      "pos": [
+        330.0,
+        0.0
+      ],
+      "title": "Bed table",
+      "values": {
+        "range": "A1",
+        "values": [
+          [
+            "Bed",
+            "x (mm)",
+            "y (mm)",
+            "Width (mm)",
+            "Depth (mm)",
+            "Area (m²)",
+            "Soil (litres at 30 cm)",
+            "50 L bags"
+          ],
+          [
+            "Tomatoes",
+            600,
+            600,
+            2400,
+            1200,
+            "=D2*E2/1000000",
+            "=F2*0.3*1000",
+            "=ROUNDUP(G2/50,0)"
+          ],
+          [
+            "Beans",
+            3600,
+            600,
+            1200,
+            3000,
+            "=D3*E3/1000000",
+            "=F3*0.3*1000",
+            "=ROUNDUP(G3/50,0)"
+          ],
+          [
+            "Salad",
+            600,
+            2400,
+            2400,
+            900,
+            "=D4*E4/1000000",
+            "=F4*0.3*1000",
+            "=ROUNDUP(G4/50,0)"
+          ],
+          [
+            "Herbs",
+            5400,
+            3000,
+            1800,
+            1200,
+            "=D5*E5/1000000",
+            "=F5*0.3*1000",
+            "=ROUNDUP(G5/50,0)"
+          ],
+          [
+            "Total",
+            "",
+            "",
+            "",
+            "",
+            "=SUM(F2:F5)",
+            "=SUM(G2:G5)",
+            "=SUM(H2:H5)"
+          ]
+        ]
+      }
+    },
+    "unback": {
+      "kind": "vc.run",
+      "pos": [
+        1669.0,
+        783.0
+      ],
+      "title": "Delete the white background",
+      "values": {
+        "command": "edit.clear",
+        "params": {},
+        "select": "color:#ffffff"
+      }
+    },
+    "vopen": {
+      "kind": "vc.open",
+      "pos": [
+        1346.0,
+        783.0
+      ]
+    },
+    "vpng": {
+      "kind": "vc.export_png",
+      "pos": [
+        2732.0,
+        783.0
+      ],
+      "values": {
+        "background": "#fbf6e9",
+        "scale": 1.0
+      }
+    },
+    "vsvg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        2732.0,
+        987.0
+      ]
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "book",
+        "port": "doc"
+      },
+      "to": {
+        "node": "table",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "table",
+        "port": "doc"
+      },
+      "to": {
+        "node": "corner_cells",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "corner_cells",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fmt",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fmt",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "land",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "sheet_pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bags",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "plan",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fence_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fence_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fence",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fence",
+        "port": "doc"
+      },
+      "to": {
+        "node": "gate",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "gate",
+        "port": "doc"
+      },
+      "to": {
+        "node": "beds_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "read0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "read0",
+        "port": "values"
+      },
+      "to": {
+        "node": "bed0",
+        "port": "vertices"
+      }
+    },
+    {
+      "from": {
+        "node": "beds_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bed0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "read1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "read1",
+        "port": "values"
+      },
+      "to": {
+        "node": "bed1",
+        "port": "vertices"
+      }
+    },
+    {
+      "from": {
+        "node": "bed0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bed1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "read2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "read2",
+        "port": "values"
+      },
+      "to": {
+        "node": "bed2",
+        "port": "vertices"
+      }
+    },
+    {
+      "from": {
+        "node": "bed1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bed2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "read3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "read3",
+        "port": "values"
+      },
+      "to": {
+        "node": "bed3",
+        "port": "vertices"
+      }
+    },
+    {
+      "from": {
+        "node": "bed2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bed3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bed3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "dims",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "dims",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_w",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_w",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_h",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_h",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cad_pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_h",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cad_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "cad_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "vopen",
+        "port": "svg"
+      }
+    },
+    {
+      "from": {
+        "node": "vopen",
+        "port": "doc"
+      },
+      "to": {
+        "node": "unback",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "unback",
+        "port": "doc"
+      },
+      "to": {
+        "node": "ink",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ink",
+        "port": "doc"
+      },
+      "to": {
+        "node": "rough",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "rough",
+        "port": "doc"
+      },
+      "to": {
+        "node": "vpng",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "rough",
+        "port": "doc"
+      },
+      "to": {
+        "node": "vsvg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "sheet_pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_sheet",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "bags",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_bags",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "cad_pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_cad",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "vpng",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "vsvg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_svg",
+        "port": "values"
+      }
+    }
+  ]
+}

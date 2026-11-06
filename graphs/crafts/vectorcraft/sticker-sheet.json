@@ -1,0 +1,670 @@
+{
+  "version": 1,
+  "nodes": {
+    "bulge0": {
+      "kind": "vc.fx.warp.bulge",
+      "pos": [
+        344.0,
+        0.0
+      ],
+      "values": {
+        "bend": 35.0
+      },
+      "serial": 1
+    },
+    "bulge_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        748.0,
+        0.0
+      ],
+      "values": {
+        "scale": 1.0
+      },
+      "serial": 3
+    },
+    "bulge_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        748.0,
+        304.0
+      ],
+      "values": {},
+      "serial": 3
+    },
+    "coin0": {
+      "kind": "vc.fx.threeD.extrude",
+      "pos": [
+        344.0,
+        240.0
+      ],
+      "values": {
+        "bevel": "rounded"
+      },
+      "serial": 1
+    },
+    "coin_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        748.0,
+        633.0
+      ],
+      "values": {
+        "scale": 1.0
+      },
+      "serial": 1
+    },
+    "coin_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        748.0,
+        937.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "halftone0": {
+      "kind": "vc.halftone",
+      "pos": [
+        344.0,
+        898.0
+      ],
+      "values": {
+        "angle": 45.0,
+        "color": "#5b2a6e",
+        "frequency": 14.0,
+        "mode": "mono",
+        "shape": "circle"
+      },
+      "serial": 1
+    },
+    "halftone_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        748.0,
+        1266.0
+      ],
+      "values": {
+        "scale": 1.0
+      },
+      "serial": 4
+    },
+    "halftone_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        748.0,
+        1570.0
+      ],
+      "values": {},
+      "serial": 4
+    },
+    "handdrawn0": {
+      "kind": "vc.fx.distort.roughen",
+      "pos": [
+        344.0,
+        1223.0
+      ],
+      "values": {
+        "detail": 8.0,
+        "points": "smooth",
+        "seed": 3,
+        "size": 2.0
+      },
+      "serial": 1
+    },
+    "handdrawn1": {
+      "kind": "vc.stroke",
+      "pos": [
+        748.0,
+        1899.0
+      ],
+      "values": {
+        "cap": "round",
+        "join": "round",
+        "weight": 2.0
+      },
+      "serial": 1
+    },
+    "handdrawn_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        1137.0,
+        1899.0
+      ],
+      "values": {
+        "scale": 1.0
+      },
+      "serial": 5
+    },
+    "handdrawn_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        1137.0,
+        2203.0
+      ],
+      "values": {},
+      "serial": 5
+    },
+    "open": {
+      "kind": "vc.open",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "file": "../../../assets/vectors/plum-badge.svg"
+      },
+      "serial": 1
+    },
+    "palette": {
+      "kind": "vc.colors",
+      "pos": [
+        344.0,
+        1484.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "riso0": {
+      "kind": "vc.reduce_colors",
+      "pos": [
+        344.0,
+        1622.0
+      ],
+      "values": {
+        "colors": 2
+      },
+      "serial": 1
+    },
+    "riso1": {
+      "kind": "vc.fx.texture.grain",
+      "pos": [
+        748.0,
+        2514.0
+      ],
+      "values": {
+        "grainType": "stippled",
+        "intensity": 35.0
+      },
+      "serial": 1
+    },
+    "riso_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        1137.0,
+        2532.0
+      ],
+      "values": {
+        "scale": 1.0
+      },
+      "serial": 2
+    },
+    "riso_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        1137.0,
+        2836.0
+      ],
+      "values": {},
+      "serial": 2
+    },
+    "save_bulge_png": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        0.0
+      ],
+      "values": {
+        "basename": "sticker-bulge",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 6,
+      "engine": "vectorcraft"
+    },
+    "save_bulge_svg": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        304.0
+      ],
+      "values": {
+        "basename": "sticker-bulge",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 7,
+      "engine": "vectorcraft"
+    },
+    "save_coin_png": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        633.0
+      ],
+      "values": {
+        "basename": "sticker-coin",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "vectorcraft"
+    },
+    "save_coin_svg": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        937.0
+      ],
+      "values": {
+        "basename": "sticker-coin",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "vectorcraft"
+    },
+    "save_halftone_png": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        1266.0
+      ],
+      "values": {
+        "basename": "sticker-halftone",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 8,
+      "engine": "vectorcraft"
+    },
+    "save_halftone_svg": {
+      "kind": "file.write",
+      "pos": [
+        1137.0,
+        1570.0
+      ],
+      "values": {
+        "basename": "sticker-halftone",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 9,
+      "engine": "vectorcraft"
+    },
+    "save_handdrawn_png": {
+      "kind": "file.write",
+      "pos": [
+        1527.0,
+        1899.0
+      ],
+      "values": {
+        "basename": "sticker-handdrawn",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 10,
+      "engine": "vectorcraft"
+    },
+    "save_handdrawn_svg": {
+      "kind": "file.write",
+      "pos": [
+        1527.0,
+        2203.0
+      ],
+      "values": {
+        "basename": "sticker-handdrawn",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 11,
+      "engine": "vectorcraft"
+    },
+    "save_palette": {
+      "kind": "file.write",
+      "pos": [
+        748.0,
+        2351.0
+      ],
+      "values": {
+        "basename": "palette",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "vectorcraft"
+    },
+    "save_riso_png": {
+      "kind": "file.write",
+      "pos": [
+        1527.0,
+        2532.0
+      ],
+      "values": {
+        "basename": "sticker-riso",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "vectorcraft"
+    },
+    "save_riso_svg": {
+      "kind": "file.write",
+      "pos": [
+        1527.0,
+        2836.0
+      ],
+      "values": {
+        "basename": "sticker-riso",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "vectorcraft"
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "palette",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "palette",
+        "port": "colors"
+      },
+      "to": {
+        "node": "save_palette",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "halftone0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "halftone0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "halftone_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "halftone0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "halftone_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "halftone_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_halftone_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "halftone_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_halftone_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "handdrawn0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "handdrawn0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "handdrawn1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "handdrawn1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "handdrawn_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "handdrawn1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "handdrawn_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "handdrawn_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_handdrawn_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "handdrawn_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_handdrawn_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bulge0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bulge0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bulge_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bulge0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bulge_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bulge_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_bulge_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "bulge_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_bulge_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "coin0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "coin0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "coin_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "coin0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "coin_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "coin_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_coin_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "coin_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_coin_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "riso0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "riso0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "riso1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "riso1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "riso_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "riso1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "riso_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "riso_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_riso_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "riso_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_riso_png",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "VectorCraft only. A hand-written SVG plum badge becomes a sheet of sticker variants: a print-shop halftone, a wobbly hand-drawn version, a bulging 'warp' version, a 3D extruded coin, and a two-colour risograph recolour. Each is exported as SVG and PNG; the palette of the original comes out as JSON.",
+    "tags": [
+      "vector",
+      "branding"
+    ],
+    "title": "One badge, five stickers"
+  },
+  "engines": [
+    "vectorcraft"
+  ]
+}

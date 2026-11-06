@@ -1,0 +1,603 @@
+{
+  "version": 1,
+  "nodes": {
+    "auto": {
+      "kind": "pc.auto",
+      "pos": [
+        355.0,
+        0.0
+      ],
+      "values": {
+        "operation": "autoTone"
+      },
+      "serial": 1
+    },
+    "faces": {
+      "kind": "pc.detect_faces",
+      "pos": [
+        355.0,
+        139.0
+      ],
+      "values": {
+        "minScore": 0.3
+      },
+      "serial": 1
+    },
+    "night0": {
+      "kind": "pc.color_lookup",
+      "pos": [
+        864.0,
+        0.0
+      ],
+      "values": {
+        "lut": "dayForNight"
+      },
+      "serial": 1
+    },
+    "night1": {
+      "kind": "pc.exposure",
+      "pos": [
+        1281.0,
+        0.0
+      ],
+      "values": {
+        "exposure": -0.6,
+        "gamma": 0.9
+      },
+      "serial": 1
+    },
+    "night_jpg": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        1743.0,
+        0.0
+      ],
+      "values": {
+        "quality": 88
+      },
+      "serial": 4
+    },
+    "noir0": {
+      "kind": "pc.black_white",
+      "pos": [
+        864.0,
+        199.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "noir1": {
+      "kind": "pc.brightness_contrast",
+      "pos": [
+        1281.0,
+        199.0
+      ],
+      "values": {
+        "contrast": 45
+      },
+      "serial": 1
+    },
+    "noir2": {
+      "kind": "pc.add_noise",
+      "pos": [
+        1743.0,
+        199.0
+      ],
+      "values": {
+        "amount": 9.0,
+        "distribution": "gaussian",
+        "monochromatic": true,
+        "seed": 7
+      },
+      "serial": 1
+    },
+    "noir_jpg": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        2159.0,
+        199.0
+      ],
+      "values": {
+        "quality": 88
+      },
+      "serial": 3
+    },
+    "oil0": {
+      "kind": "pc.oil_paint",
+      "pos": [
+        864.0,
+        486.0
+      ],
+      "values": {
+        "bristleDetail": 7.0,
+        "cleanliness": 4.0,
+        "scale": 1.2,
+        "stylization": 6.0
+      },
+      "serial": 1
+    },
+    "oil1": {
+      "kind": "pc.unsharp_mask",
+      "pos": [
+        1281.0,
+        486.0
+      ],
+      "values": {
+        "amount": 60.0,
+        "radius": 1.5
+      },
+      "serial": 1
+    },
+    "oil_jpg": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        1743.0,
+        486.0
+      ],
+      "values": {
+        "quality": 88
+      },
+      "serial": 1
+    },
+    "open": {
+      "kind": "pc.open",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "file": "../../../assets/pictures/santa-rosa-plums.jpg"
+      },
+      "serial": 1
+    },
+    "pop0": {
+      "kind": "pc.posterize",
+      "pos": [
+        864.0,
+        751.0
+      ],
+      "values": {
+        "levels": 4
+      },
+      "serial": 1
+    },
+    "pop1": {
+      "kind": "pc.hue_saturation",
+      "pos": [
+        1281.0,
+        751.0
+      ],
+      "values": {
+        "hue": 160,
+        "saturation": 45
+      },
+      "serial": 1
+    },
+    "pop_jpg": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        1743.0,
+        751.0
+      ],
+      "values": {
+        "quality": 88
+      },
+      "serial": 2
+    },
+    "save_faces": {
+      "kind": "file.write",
+      "pos": [
+        864.0,
+        1088.0
+      ],
+      "values": {
+        "basename": "faces-in-the-fruit",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "photocraft"
+    },
+    "save_night": {
+      "kind": "file.write",
+      "pos": [
+        2159.0,
+        0.0
+      ],
+      "values": {
+        "basename": "plums-night",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "photocraft"
+    },
+    "save_noir": {
+      "kind": "file.write",
+      "pos": [
+        2574.0,
+        199.0
+      ],
+      "values": {
+        "basename": "plums-noir",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "photocraft"
+    },
+    "save_oil": {
+      "kind": "file.write",
+      "pos": [
+        2159.0,
+        486.0
+      ],
+      "values": {
+        "basename": "plums-oil",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "photocraft"
+    },
+    "save_pop": {
+      "kind": "file.write",
+      "pos": [
+        2159.0,
+        751.0
+      ],
+      "values": {
+        "basename": "plums-pop",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "photocraft"
+    },
+    "save_seventies": {
+      "kind": "file.write",
+      "pos": [
+        2989.0,
+        1063.0
+      ],
+      "values": {
+        "basename": "plums-seventies",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 6,
+      "engine": "photocraft"
+    },
+    "seventies0": {
+      "kind": "pc.color_lookup",
+      "pos": [
+        864.0,
+        889.0
+      ],
+      "values": {
+        "lut": "crossProcess"
+      },
+      "serial": 2
+    },
+    "seventies1": {
+      "kind": "pc.levels",
+      "pos": [
+        1281.0,
+        1063.0
+      ],
+      "values": {
+        "gamma": 1.1,
+        "outBlack": 28
+      },
+      "serial": 1
+    },
+    "seventies2": {
+      "kind": "pc.add_noise",
+      "pos": [
+        1743.0,
+        1063.0
+      ],
+      "values": {
+        "amount": 5.0,
+        "seed": 70
+      },
+      "serial": 2
+    },
+    "seventies3": {
+      "kind": "pc.gaussian_blur",
+      "pos": [
+        2159.0,
+        1063.0
+      ],
+      "values": {
+        "radius": 0.8
+      },
+      "serial": 1
+    },
+    "seventies_jpg": {
+      "kind": "pc.export_jpg",
+      "pos": [
+        2574.0,
+        1063.0
+      ],
+      "values": {
+        "quality": 88
+      },
+      "serial": 5
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "auto",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "auto",
+        "port": "doc"
+      },
+      "to": {
+        "node": "oil0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "oil0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "oil1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "oil1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "oil_jpg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "oil_jpg",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_oil",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "auto",
+        "port": "doc"
+      },
+      "to": {
+        "node": "noir0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "noir0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "noir1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "noir1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "noir2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "noir2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "noir_jpg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "noir_jpg",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_noir",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "auto",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seventies0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seventies0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seventies1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seventies1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seventies2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seventies2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seventies3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seventies3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "seventies_jpg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "seventies_jpg",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_seventies",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "auto",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pop0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pop0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pop1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pop1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pop_jpg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pop_jpg",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_pop",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "auto",
+        "port": "doc"
+      },
+      "to": {
+        "node": "night0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "night0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "night1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "night1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "night_jpg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "night_jpg",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_night",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "faces",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "faces",
+        "port": "faces"
+      },
+      "to": {
+        "node": "save_faces",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "PhotoCraft only. One photograph of Santa Rosa plums, five looks: an oil painting, gritty black and white, a 1970s cross-processed print, a four-colour pop-art poster, and a moonlit night. Also asks the face detector whether it sees faces in the fruit (pareidolia check). Photo: 'Santa Rosa Plums' by SummerTomato, CC BY 2.0, cropped (assets/CREDITS.md).",
+    "tags": [
+      "photo",
+      "filters"
+    ],
+    "title": "Plums, five ways"
+  },
+  "engines": [
+    "photocraft"
+  ]
+}

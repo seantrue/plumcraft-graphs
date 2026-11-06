@@ -1,0 +1,635 @@
+{
+  "engines": [
+    "gridcraft"
+  ],
+  "meta": {
+    "about": "GridCraft only. Change the inputs in Write inputs (machine price, cups a week, what the café charges) and the workbook works out how many months until a home espresso machine pays for itself, charts café against home spending over two years, and writes a PDF, a CSV and the break-even month as JSON.",
+    "tags": [
+      "finance",
+      "everyday"
+    ],
+    "title": "Is the espresso machine worth it?"
+  },
+  "nodes": {
+    "book": {
+      "kind": "gc.new",
+      "pos": [
+        0.0,
+        0.0
+      ]
+    },
+    "chart": {
+      "kind": "gc.chart",
+      "pos": [
+        351.0,
+        531.0
+      ],
+      "title": "Café vs home espresso, cumulative",
+      "values": {
+        "at": "A13",
+        "range": "F1:G26",
+        "type": "line"
+      }
+    },
+    "csv": {
+      "kind": "gc.export_csv",
+      "pos": [
+        1472.0,
+        531.0
+      ]
+    },
+    "fit": {
+      "kind": "gc.run",
+      "pos": [
+        1011.0,
+        255.0
+      ],
+      "title": "AutoFit columns",
+      "values": {
+        "command": "home.autofitColumnWidth",
+        "params": {
+          "cols": "A:B"
+        }
+      }
+    },
+    "inputs": {
+      "kind": "gc.write_range",
+      "pos": [
+        330.0,
+        0.0
+      ],
+      "title": "Write inputs",
+      "values": {
+        "range": "A1",
+        "values": [
+          [
+            "Input",
+            "Value"
+          ],
+          [
+            "Machine price",
+            649
+          ],
+          [
+            "Beans per cup",
+            0.45
+          ],
+          [
+            "Milk per cup",
+            0.15
+          ],
+          [
+            "Café price per cup",
+            4.75
+          ],
+          [
+            "Cups per week",
+            9
+          ],
+          [
+            "Upkeep per year",
+            40
+          ]
+        ]
+      }
+    },
+    "label": {
+      "kind": "gc.write_range",
+      "pos": [
+        1011.0,
+        0.0
+      ],
+      "title": "Write break-even",
+      "values": {
+        "range": "A9",
+        "values": [
+          [
+            "Break-even month",
+            "=$B$2/($B$6*52/12*($B$5-$B$3-$B$4)-$B$7/12)"
+          ],
+          [
+            "Saved after 2 years",
+            "=F26-G26"
+          ]
+        ]
+      }
+    },
+    "land": {
+      "kind": "gc.run",
+      "pos": [
+        1158.0,
+        531.0
+      ],
+      "title": "Landscape",
+      "values": {
+        "command": "pageLayout.orientation",
+        "params": {
+          "orientation": "landscape"
+        }
+      }
+    },
+    "money": {
+      "kind": "gc.number_format",
+      "pos": [
+        1369.0,
+        0.0
+      ],
+      "values": {
+        "format": "Currency",
+        "range": "F2:G26"
+      }
+    },
+    "money2": {
+      "kind": "gc.number_format",
+      "pos": [
+        1706.0,
+        0.0
+      ],
+      "values": {
+        "format": "Currency",
+        "range": "B2:B5"
+      }
+    },
+    "money3": {
+      "kind": "gc.number_format",
+      "pos": [
+        0.0,
+        255.0
+      ],
+      "values": {
+        "format": "Currency",
+        "range": "B7"
+      }
+    },
+    "money4": {
+      "kind": "gc.number_format",
+      "pos": [
+        337.0,
+        255.0
+      ],
+      "values": {
+        "format": "Currency",
+        "range": "B10"
+      }
+    },
+    "months": {
+      "kind": "gc.evaluate",
+      "pos": [
+        1472.0,
+        651.0
+      ],
+      "title": "Months to break even",
+      "values": {
+        "formula": "=ROUND(B9,1)"
+      }
+    },
+    "pdf": {
+      "kind": "gc.export_pdf",
+      "pos": [
+        1472.0,
+        771.0
+      ]
+    },
+    "save_csv": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        1858.0,
+        531.0
+      ],
+      "values": {
+        "basename": "espresso",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_months": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        1858.0,
+        693.0
+      ],
+      "values": {
+        "basename": "break-even-months",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_pdf": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        1858.0,
+        855.0
+      ],
+      "values": {
+        "basename": "espresso",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "size": {
+      "kind": "gc.run",
+      "pos": [
+        828.0,
+        531.0
+      ],
+      "title": "Bigger chart",
+      "values": {
+        "command": "chart.set",
+        "params": {
+          "height": 260,
+          "legend": "bottom",
+          "title": "Café vs home espresso, cumulative",
+          "width": 330,
+          "xTitle": "Months",
+          "yTitle": "Spent"
+        }
+      }
+    },
+    "table": {
+      "kind": "gc.write_range",
+      "pos": [
+        660.0,
+        0.0
+      ],
+      "title": "Write 24 months",
+      "values": {
+        "range": "E1",
+        "values": [
+          [
+            "Month",
+            "Café",
+            "Home"
+          ],
+          [
+            0,
+            "=E2*$B$6*52/12*$B$5",
+            "=$B$2+E2*$B$6*52/12*($B$3+$B$4)+E2*$B$7/12"
+          ],
+          [
+            1,
+            "=E3*$B$6*52/12*$B$5",
+            "=$B$2+E3*$B$6*52/12*($B$3+$B$4)+E3*$B$7/12"
+          ],
+          [
+            2,
+            "=E4*$B$6*52/12*$B$5",
+            "=$B$2+E4*$B$6*52/12*($B$3+$B$4)+E4*$B$7/12"
+          ],
+          [
+            3,
+            "=E5*$B$6*52/12*$B$5",
+            "=$B$2+E5*$B$6*52/12*($B$3+$B$4)+E5*$B$7/12"
+          ],
+          [
+            4,
+            "=E6*$B$6*52/12*$B$5",
+            "=$B$2+E6*$B$6*52/12*($B$3+$B$4)+E6*$B$7/12"
+          ],
+          [
+            5,
+            "=E7*$B$6*52/12*$B$5",
+            "=$B$2+E7*$B$6*52/12*($B$3+$B$4)+E7*$B$7/12"
+          ],
+          [
+            6,
+            "=E8*$B$6*52/12*$B$5",
+            "=$B$2+E8*$B$6*52/12*($B$3+$B$4)+E8*$B$7/12"
+          ],
+          [
+            7,
+            "=E9*$B$6*52/12*$B$5",
+            "=$B$2+E9*$B$6*52/12*($B$3+$B$4)+E9*$B$7/12"
+          ],
+          [
+            8,
+            "=E10*$B$6*52/12*$B$5",
+            "=$B$2+E10*$B$6*52/12*($B$3+$B$4)+E10*$B$7/12"
+          ],
+          [
+            9,
+            "=E11*$B$6*52/12*$B$5",
+            "=$B$2+E11*$B$6*52/12*($B$3+$B$4)+E11*$B$7/12"
+          ],
+          [
+            10,
+            "=E12*$B$6*52/12*$B$5",
+            "=$B$2+E12*$B$6*52/12*($B$3+$B$4)+E12*$B$7/12"
+          ],
+          [
+            11,
+            "=E13*$B$6*52/12*$B$5",
+            "=$B$2+E13*$B$6*52/12*($B$3+$B$4)+E13*$B$7/12"
+          ],
+          [
+            12,
+            "=E14*$B$6*52/12*$B$5",
+            "=$B$2+E14*$B$6*52/12*($B$3+$B$4)+E14*$B$7/12"
+          ],
+          [
+            13,
+            "=E15*$B$6*52/12*$B$5",
+            "=$B$2+E15*$B$6*52/12*($B$3+$B$4)+E15*$B$7/12"
+          ],
+          [
+            14,
+            "=E16*$B$6*52/12*$B$5",
+            "=$B$2+E16*$B$6*52/12*($B$3+$B$4)+E16*$B$7/12"
+          ],
+          [
+            15,
+            "=E17*$B$6*52/12*$B$5",
+            "=$B$2+E17*$B$6*52/12*($B$3+$B$4)+E17*$B$7/12"
+          ],
+          [
+            16,
+            "=E18*$B$6*52/12*$B$5",
+            "=$B$2+E18*$B$6*52/12*($B$3+$B$4)+E18*$B$7/12"
+          ],
+          [
+            17,
+            "=E19*$B$6*52/12*$B$5",
+            "=$B$2+E19*$B$6*52/12*($B$3+$B$4)+E19*$B$7/12"
+          ],
+          [
+            18,
+            "=E20*$B$6*52/12*$B$5",
+            "=$B$2+E20*$B$6*52/12*($B$3+$B$4)+E20*$B$7/12"
+          ],
+          [
+            19,
+            "=E21*$B$6*52/12*$B$5",
+            "=$B$2+E21*$B$6*52/12*($B$3+$B$4)+E21*$B$7/12"
+          ],
+          [
+            20,
+            "=E22*$B$6*52/12*$B$5",
+            "=$B$2+E22*$B$6*52/12*($B$3+$B$4)+E22*$B$7/12"
+          ],
+          [
+            21,
+            "=E23*$B$6*52/12*$B$5",
+            "=$B$2+E23*$B$6*52/12*($B$3+$B$4)+E23*$B$7/12"
+          ],
+          [
+            22,
+            "=E24*$B$6*52/12*$B$5",
+            "=$B$2+E24*$B$6*52/12*($B$3+$B$4)+E24*$B$7/12"
+          ],
+          [
+            23,
+            "=E25*$B$6*52/12*$B$5",
+            "=$B$2+E25*$B$6*52/12*($B$3+$B$4)+E25*$B$7/12"
+          ],
+          [
+            24,
+            "=E26*$B$6*52/12*$B$5",
+            "=$B$2+E26*$B$6*52/12*($B$3+$B$4)+E26*$B$7/12"
+          ]
+        ]
+      }
+    },
+    "tbl": {
+      "kind": "gc.format_as_table",
+      "pos": [
+        0.0,
+        531.0
+      ],
+      "values": {
+        "range": "E1:G26",
+        "style": "TableStyleMedium7"
+      }
+    },
+    "tenths": {
+      "kind": "gc.number_format",
+      "pos": [
+        674.0,
+        255.0
+      ],
+      "values": {
+        "format": "0.0",
+        "range": "B9"
+      }
+    },
+    "wide": {
+      "kind": "gc.run",
+      "pos": [
+        1362.0,
+        255.0
+      ],
+      "title": "Widen money columns",
+      "values": {
+        "command": "home.columnWidth",
+        "params": {
+          "chars": 11,
+          "cols": "F:G"
+        }
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "book",
+        "port": "doc"
+      },
+      "to": {
+        "node": "inputs",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "inputs",
+        "port": "doc"
+      },
+      "to": {
+        "node": "table",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "table",
+        "port": "doc"
+      },
+      "to": {
+        "node": "label",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "label",
+        "port": "doc"
+      },
+      "to": {
+        "node": "money",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "money",
+        "port": "doc"
+      },
+      "to": {
+        "node": "money2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "money2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "money3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "money3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "money4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "money4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tenths",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tenths",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "wide",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "wide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tbl",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tbl",
+        "port": "doc"
+      },
+      "to": {
+        "node": "chart",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "chart",
+        "port": "doc"
+      },
+      "to": {
+        "node": "size",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "size",
+        "port": "doc"
+      },
+      "to": {
+        "node": "land",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "csv",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "months",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "csv",
+        "port": "csv"
+      },
+      "to": {
+        "node": "save_csv",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "months",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_months",
+        "port": "values"
+      }
+    }
+  ]
+}

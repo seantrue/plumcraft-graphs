@@ -1,0 +1,677 @@
+{
+  "version": 1,
+  "nodes": {
+    "centre": {
+      "kind": "cad.line",
+      "pos": [
+        2561.0,
+        0.0
+      ],
+      "values": {
+        "points": [
+          [
+            140.0,
+            0
+          ],
+          [
+            140.0,
+            900
+          ]
+        ]
+      },
+      "serial": 1
+    },
+    "centre_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        2195.0,
+        0.0
+      ],
+      "values": {
+        "color": "cyan",
+        "current": true,
+        "name": "Centre"
+      },
+      "serial": 4
+    },
+    "count": {
+      "kind": "cad.entities",
+      "pos": [
+        2641.0,
+        421.0
+      ],
+      "values": {
+        "type": "CIRCLE"
+      },
+      "serial": 1
+    },
+    "d_height": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        407.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          310,
+          450.0
+        ],
+        "p1": [
+          280,
+          0
+        ],
+        "p2": [
+          280,
+          900
+        ]
+      },
+      "serial": 4
+    },
+    "d_inset": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        815.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          18.5,
+          94.0
+        ],
+        "p1": [
+          0,
+          114.0
+        ],
+        "p2": [
+          37,
+          114.0
+        ]
+      },
+      "serial": 1
+    },
+    "d_pitch": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        1222.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          12,
+          130.0
+        ],
+        "p1": [
+          37,
+          114.0
+        ],
+        "p2": [
+          37,
+          146.0
+        ]
+      },
+      "serial": 2
+    },
+    "d_width": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        0.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          140.0,
+          925
+        ],
+        "p1": [
+          0,
+          900
+        ],
+        "p2": [
+          280,
+          900
+        ]
+      },
+      "serial": 3
+    },
+    "dims_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        2883.0,
+        0.0
+      ],
+      "values": {
+        "color": "yellow",
+        "current": true,
+        "name": "Dimensions"
+      },
+      "serial": 1
+    },
+    "dwg": {
+      "kind": "cad.export_dwg",
+      "pos": [
+        2641.0,
+        684.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "grid": {
+      "kind": "cad.array_rect",
+      "pos": [
+        1072.0,
+        0.0
+      ],
+      "values": {
+        "colSpacing": 206,
+        "cols": 2,
+        "rowSpacing": 32,
+        "rows": 22
+      },
+      "serial": 1
+    },
+    "hole": {
+      "kind": "cad.circle",
+      "pos": [
+        741.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          37,
+          114.0
+        ],
+        "radius": 2.5
+      },
+      "serial": 1
+    },
+    "holes_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        375.0,
+        0.0
+      ],
+      "values": {
+        "color": "red",
+        "current": true,
+        "name": "Holes"
+      },
+      "serial": 2
+    },
+    "new": {
+      "kind": "cad.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "metric": true
+      },
+      "serial": 1
+    },
+    "panel": {
+      "kind": "cad.rectangle",
+      "pos": [
+        1838.0,
+        0.0
+      ],
+      "values": {
+        "p1": [
+          0,
+          0
+        ],
+        "p2": [
+          280,
+          900
+        ]
+      },
+      "serial": 1
+    },
+    "panel_layer": {
+      "kind": "cad.layer",
+      "pos": [
+        1472.0,
+        0.0
+      ],
+      "values": {
+        "color": "white",
+        "current": true,
+        "name": "Panel"
+      },
+      "serial": 3
+    },
+    "pdf": {
+      "kind": "cad.export_pdf",
+      "pos": [
+        2641.0,
+        800.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "png": {
+      "kind": "cad.export_png",
+      "pos": [
+        2641.0,
+        916.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "save_count": {
+      "kind": "file.write",
+      "pos": [
+        3011.0,
+        421.0
+      ],
+      "values": {
+        "basename": "hole-count",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "cadcraft"
+    },
+    "save_dwg": {
+      "kind": "file.write",
+      "pos": [
+        3011.0,
+        684.0
+      ],
+      "values": {
+        "basename": "shelf-pins",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "cadcraft"
+    },
+    "save_pdf": {
+      "kind": "file.write",
+      "pos": [
+        3011.0,
+        847.0
+      ],
+      "values": {
+        "basename": "shelf-pins",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "cadcraft"
+    },
+    "save_png": {
+      "kind": "file.write",
+      "pos": [
+        3011.0,
+        1010.0
+      ],
+      "values": {
+        "basename": "shelf-pins",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "cadcraft"
+    },
+    "save_svg": {
+      "kind": "file.write",
+      "pos": [
+        3011.0,
+        1173.0
+      ],
+      "values": {
+        "basename": "shelf-pins",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "cadcraft"
+    },
+    "scale_bar": {
+      "kind": "cad.pline",
+      "pos": [
+        1629.0,
+        421.0
+      ],
+      "values": {
+        "closed": true,
+        "vertices": [
+          [
+            60,
+            -40
+          ],
+          [
+            160,
+            -40
+          ],
+          [
+            160,
+            -34
+          ],
+          [
+            60,
+            -34
+          ]
+        ]
+      },
+      "serial": 1
+    },
+    "scale_txt": {
+      "kind": "cad.text",
+      "pos": [
+        1973.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          110,
+          -55
+        ],
+        "height": 6.0,
+        "justify": "MC",
+        "text": "100 mm: measure me"
+      },
+      "serial": 2
+    },
+    "svg": {
+      "kind": "cad.export_svg",
+      "pos": [
+        2641.0,
+        1081.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "title": {
+      "kind": "cad.text",
+      "pos": [
+        2307.0,
+        421.0
+      ],
+      "values": {
+        "at": [
+          140.0,
+          960
+        ],
+        "height": 9.0,
+        "justify": "MC",
+        "text": "BOOKCASE SIDE · 5 mm PINS · 32 mm SYSTEM"
+      },
+      "serial": 1
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "new",
+        "port": "doc"
+      },
+      "to": {
+        "node": "holes_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "holes_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hole",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hole",
+        "port": "doc"
+      },
+      "to": {
+        "node": "grid",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "grid",
+        "port": "doc"
+      },
+      "to": {
+        "node": "panel_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "panel_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "panel",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "panel",
+        "port": "doc"
+      },
+      "to": {
+        "node": "centre_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "centre_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "centre",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "centre",
+        "port": "doc"
+      },
+      "to": {
+        "node": "dims_layer",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "dims_layer",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_width",
+        "port": "doc"
+      },
+      "via": [
+        [
+          2973,
+          261
+        ],
+        [
+          164,
+          387
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "d_width",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_height",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_height",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_inset",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_inset",
+        "port": "doc"
+      },
+      "to": {
+        "node": "d_pitch",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "d_pitch",
+        "port": "doc"
+      },
+      "to": {
+        "node": "scale_bar",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "scale_bar",
+        "port": "doc"
+      },
+      "to": {
+        "node": "scale_txt",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "scale_txt",
+        "port": "doc"
+      },
+      "to": {
+        "node": "title",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "dwg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "count",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "dwg",
+        "port": "dwg"
+      },
+      "to": {
+        "node": "save_dwg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "count",
+        "port": "count"
+      },
+      "to": {
+        "node": "save_count",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "CadCraft only. A 280 × 900 mm bookcase side with two columns of 5 mm shelf-pin holes on the 32 mm system, 37 mm in from each edge, dimensioned and labelled on separate layers. The DWG is true scale, for a CNC or for tiling a 1:1 print from a CAD program; the PDF and PNG are fitted to the page as a shop drawing (the 100 mm bar shows the scale of any printout). Change the panel size or pitch in the nodes to fit your cabinet; the hole count comes out as JSON as a check.",
+    "tags": [
+      "woodwork",
+      "fabrication"
+    ],
+    "title": "Shelf-pin drilling template"
+  },
+  "engines": [
+    "cadcraft"
+  ]
+}

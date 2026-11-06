@@ -1,0 +1,770 @@
+{
+  "engines": [
+    "cadcraft",
+    "vectorcraft",
+    "array"
+  ],
+  "meta": {
+    "about": "CadCraft → VectorCraft → array engine. CadCraft draws a 95 mm coaster with a ring of twelve vent holes and a hexagon centre; VectorCraft makes it cutter-ready (hairline red cut strokes, outlines offset by half the 0.1 mm kerf); the array engine rasterizes the cut file and labels each separate piece, so you can see at a glance how many parts will fall out of the sheet before you burn any plywood. Outputs the cut SVG and PDF and the parts preview.",
+    "tags": [
+      "fabrication",
+      "laser"
+    ],
+    "title": "Laser-cut coasters"
+  },
+  "nodes": {
+    "clean": {
+      "kind": "vc.cleanup",
+      "pos": [
+        951.0,
+        438.0
+      ]
+    },
+    "cut": {
+      "kind": "vc.stroke",
+      "pos": [
+        0.0,
+        438.0
+      ],
+      "values": {
+        "cap": "round",
+        "join": "round",
+        "weight": 0.25
+      }
+    },
+    "cut_pdf": {
+      "kind": "vc.export_pdf",
+      "pos": [
+        1253.0,
+        705.0
+      ]
+    },
+    "cut_png": {
+      "kind": "vc.export_png",
+      "pos": [
+        1688.0,
+        438.0
+      ],
+      "values": {
+        "background": "#ffffff",
+        "scale": 1.0
+      }
+    },
+    "cut_svg": {
+      "kind": "vc.export_svg",
+      "pos": [
+        1253.0,
+        888.0
+      ]
+    },
+    "dims": {
+      "kind": "cad.dim_linear",
+      "pos": [
+        1517.0,
+        120.0
+      ],
+      "values": {
+        "at": [
+          0,
+          -62
+        ],
+        "p1": [
+          -47.5,
+          -55
+        ],
+        "p2": [
+          47.5,
+          -55
+        ]
+      }
+    },
+    "dwg": {
+      "kind": "cad.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "metric": true
+      }
+    },
+    "edges": {
+      "kind": "array.arithmetic",
+      "pos": [
+        309.0,
+        1164.0
+      ],
+      "title": "Lines as edges",
+      "values": {
+        "constant": 1.0,
+        "operation": "subtract from"
+      }
+    },
+    "fat": {
+      "kind": "vc.stroke",
+      "pos": [
+        1253.0,
+        438.0
+      ],
+      "title": "Thick lines for the preview",
+      "values": {
+        "join": "round",
+        "weight": 6.0
+      }
+    },
+    "hex": {
+      "kind": "cad.polygon",
+      "pos": [
+        1222.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          0,
+          0
+        ],
+        "inscribed": false,
+        "radius": 16.0,
+        "sides": 6
+      }
+    },
+    "hsv": {
+      "kind": "array.stack",
+      "pos": [
+        1741.0,
+        1164.0
+      ],
+      "values": {
+        "space": "HSV"
+      }
+    },
+    "hue": {
+      "kind": "array.arithmetic",
+      "pos": [
+        1039.0,
+        1164.0
+      ],
+      "title": "Golden-angle hue",
+      "values": {
+        "constant": 137.508,
+        "operation": "multiply"
+      }
+    },
+    "ink": {
+      "kind": "array.pick_channel",
+      "pos": [
+        2341.0,
+        438.0
+      ],
+      "values": {
+        "channel": 2
+      }
+    },
+    "kerf": {
+      "kind": "vc.offset_path",
+      "pos": [
+        628.0,
+        438.0
+      ],
+      "values": {
+        "joins": "round",
+        "offset": 0.05
+      }
+    },
+    "lines": {
+      "kind": "array.binarize",
+      "pos": [
+        0.0,
+        1164.0
+      ],
+      "title": "Cut lines",
+      "values": {
+        "threshold": 0.5
+      }
+    },
+    "nofill": {
+      "kind": "vc.fill",
+      "pos": [
+        2626.0,
+        0.0
+      ],
+      "values": {
+        "none": true
+      }
+    },
+    "parts": {
+      "kind": "array.connected_components",
+      "pos": [
+        653.0,
+        1164.0
+      ]
+    },
+    "pix": {
+      "kind": "array.decode_image",
+      "pos": [
+        2011.0,
+        438.0
+      ],
+      "values": {
+        "background": "white"
+      }
+    },
+    "png": {
+      "kind": "array.encode_image",
+      "pos": [
+        2414.0,
+        1164.0
+      ],
+      "values": {
+        "format": "png"
+      }
+    },
+    "red": {
+      "kind": "vc.recolor",
+      "pos": [
+        314.0,
+        438.0
+      ],
+      "values": {
+        "map": {
+          "#000000": "#ff0000"
+        }
+      }
+    },
+    "rgb": {
+      "kind": "array.convert_color_space",
+      "pos": [
+        2035.0,
+        1164.0
+      ],
+      "values": {
+        "target": "RGB"
+      }
+    },
+    "rim": {
+      "kind": "cad.circle",
+      "pos": [
+        934.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          0,
+          0
+        ],
+        "radius": 47.5
+      }
+    },
+    "ring": {
+      "kind": "cad.array_polar",
+      "pos": [
+        611.0,
+        0.0
+      ],
+      "values": {
+        "angle": 360.0,
+        "center": [
+          0,
+          0
+        ],
+        "count": 12,
+        "rotate": true
+      }
+    },
+    "sat": {
+      "kind": "array.constant",
+      "pos": [
+        1397.0,
+        1305.0
+      ],
+      "values": {
+        "value": 0.65
+      }
+    },
+    "save_parts": {
+      "engine": "array",
+      "kind": "file.write",
+      "pos": [
+        2744.0,
+        1164.0
+      ],
+      "values": {
+        "basename": "coaster-parts",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_pdf": {
+      "engine": "vectorcraft",
+      "kind": "file.write",
+      "pos": [
+        1688.0,
+        705.0
+      ],
+      "values": {
+        "basename": "coaster-cut",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_shop": {
+      "engine": "cadcraft",
+      "kind": "file.write",
+      "pos": [
+        2191.0,
+        204.0
+      ],
+      "values": {
+        "basename": "coaster-drawing",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_svg": {
+      "engine": "vectorcraft",
+      "kind": "file.write",
+      "pos": [
+        1688.0,
+        888.0
+      ],
+      "values": {
+        "basename": "coaster-cut",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "shop": {
+      "kind": "cad.export_pdf",
+      "pos": [
+        1875.0,
+        204.0
+      ]
+    },
+    "svg": {
+      "kind": "cad.export_svg",
+      "pos": [
+        1517.0,
+        0.0
+      ]
+    },
+    "unback": {
+      "kind": "vc.run",
+      "pos": [
+        2191.0,
+        0.0
+      ],
+      "title": "Delete the white background",
+      "values": {
+        "command": "edit.clear",
+        "params": {},
+        "select": "color:#ffffff"
+      }
+    },
+    "v": {
+      "kind": "vc.open",
+      "pos": [
+        1875.0,
+        0.0
+      ]
+    },
+    "val": {
+      "kind": "array.constant",
+      "pos": [
+        1397.0,
+        1488.0
+      ],
+      "values": {
+        "value": 0.95
+      }
+    },
+    "vent": {
+      "kind": "cad.circle",
+      "pos": [
+        323.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          0,
+          34
+        ],
+        "radius": 4.0
+      }
+    },
+    "wrap": {
+      "kind": "array.wrap_angle",
+      "pos": [
+        1397.0,
+        1164.0
+      ],
+      "title": "Hue in degrees",
+      "values": {
+        "range": "unsigned",
+        "turn": 360.0
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "dwg",
+        "port": "doc"
+      },
+      "to": {
+        "node": "vent",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "vent",
+        "port": "doc"
+      },
+      "to": {
+        "node": "ring",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ring",
+        "port": "doc"
+      },
+      "to": {
+        "node": "rim",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "rim",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hex",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hex",
+        "port": "doc"
+      },
+      "to": {
+        "node": "svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "dims",
+        "port": "doc"
+      },
+      "to": {
+        "node": "shop",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hex",
+        "port": "doc"
+      },
+      "to": {
+        "node": "dims",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "v",
+        "port": "svg"
+      }
+    },
+    {
+      "from": {
+        "node": "v",
+        "port": "doc"
+      },
+      "to": {
+        "node": "unback",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "unback",
+        "port": "doc"
+      },
+      "to": {
+        "node": "nofill",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "nofill",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cut",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "cut",
+        "port": "doc"
+      },
+      "to": {
+        "node": "red",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "red",
+        "port": "doc"
+      },
+      "to": {
+        "node": "kerf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "kerf",
+        "port": "doc"
+      },
+      "to": {
+        "node": "clean",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "clean",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cut_svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "clean",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cut_pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "clean",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fat",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fat",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cut_png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "cut_png",
+        "port": "image"
+      },
+      "to": {
+        "node": "pix",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "pix",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "ink",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "ink",
+        "port": "channel"
+      },
+      "to": {
+        "node": "lines",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "lines",
+        "port": "binary"
+      },
+      "to": {
+        "node": "edges",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "edges",
+        "port": "result"
+      },
+      "to": {
+        "node": "parts",
+        "port": "edges"
+      }
+    },
+    {
+      "from": {
+        "node": "parts",
+        "port": "labels"
+      },
+      "to": {
+        "node": "hue",
+        "port": "a"
+      }
+    },
+    {
+      "from": {
+        "node": "hue",
+        "port": "result"
+      },
+      "to": {
+        "node": "wrap",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "parts",
+        "port": "labels"
+      },
+      "to": {
+        "node": "sat",
+        "port": "like"
+      }
+    },
+    {
+      "from": {
+        "node": "parts",
+        "port": "labels"
+      },
+      "to": {
+        "node": "val",
+        "port": "like"
+      }
+    },
+    {
+      "from": {
+        "node": "wrap",
+        "port": "wrapped"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c1"
+      }
+    },
+    {
+      "from": {
+        "node": "sat",
+        "port": "constant"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c2"
+      }
+    },
+    {
+      "from": {
+        "node": "val",
+        "port": "constant"
+      },
+      "to": {
+        "node": "hsv",
+        "port": "c3"
+      }
+    },
+    {
+      "from": {
+        "node": "hsv",
+        "port": "stack"
+      },
+      "to": {
+        "node": "rgb",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "rgb",
+        "port": "converted"
+      },
+      "to": {
+        "node": "png",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "cut_svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_svg",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "cut_pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "shop",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_shop",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_parts",
+        "port": "values"
+      }
+    }
+  ]
+}

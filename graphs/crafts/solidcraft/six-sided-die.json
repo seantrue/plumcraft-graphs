@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "nodes": {
+    "cube": {
+      "kind": "sol.box",
+      "pos": [
+        372.0,
+        0.0
+      ],
+      "values": {
+        "body_name": "Die",
+        "corner": [
+          -8.0,
+          -8.0,
+          -8.0
+        ],
+        "height": "16",
+        "length": "16",
+        "operation": "new",
+        "width": "16"
+      },
+      "serial": 1
+    },
+    "design": {
+      "kind": "sol.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "iso": {
+      "kind": "sol.export_png",
+      "pos": [
+        3961.0,
+        373.0
+      ],
+      "values": {
+        "height": 600,
+        "view": "iso",
+        "width": 800
+      },
+      "serial": 1
+    },
+    "ivory": {
+      "kind": "sol.appearance",
+      "pos": [
+        3588.0,
+        373.0
+      ],
+      "values": {
+        "bodies": [
+          "Die"
+        ],
+        "color": "#f3ead8"
+      },
+      "serial": 1
+    },
+    "measure": {
+      "kind": "sol.measure",
+      "pos": [
+        3961.0,
+        594.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "mf": {
+      "kind": "sol.export_3mf",
+      "pos": [
+        3961.0,
+        749.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "pip1_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        1053.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          0,
+          0,
+          8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 2
+    },
+    "pip2_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        3583.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          8.0,
+          -4.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 3
+    },
+    "pip2_1": {
+      "kind": "sol.sphere",
+      "pos": [
+        3938.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          8.0,
+          4.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 4
+    },
+    "pip3_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        1087.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          8.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 5
+    },
+    "pip3_1": {
+      "kind": "sol.sphere",
+      "pos": [
+        1442.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          0,
+          8.0,
+          0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 6
+    },
+    "pip3_2": {
+      "kind": "sol.sphere",
+      "pos": [
+        1798.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          8.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 7
+    },
+    "pip4_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        2153.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          -8.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 8
+    },
+    "pip4_1": {
+      "kind": "sol.sphere",
+      "pos": [
+        2508.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          -8.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 9
+    },
+    "pip4_2": {
+      "kind": "sol.sphere",
+      "pos": [
+        2863.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          -8.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 10
+    },
+    "pip4_3": {
+      "kind": "sol.sphere",
+      "pos": [
+        3225.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          -8.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 11
+    },
+    "pip5_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        4293.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          -8.0,
+          -4.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 12
+    },
+    "pip5_1": {
+      "kind": "sol.sphere",
+      "pos": [
+        4655.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          -8.0,
+          -4.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 13
+    },
+    "pip5_2": {
+      "kind": "sol.sphere",
+      "pos": [
+        0.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -8.0,
+          0,
+          0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 14
+    },
+    "pip5_3": {
+      "kind": "sol.sphere",
+      "pos": [
+        362.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -8.0,
+          4.0,
+          -4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 15
+    },
+    "pip5_4": {
+      "kind": "sol.sphere",
+      "pos": [
+        725.0,
+        373.0
+      ],
+      "values": {
+        "center": [
+          -8.0,
+          4.0,
+          4.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 16
+    },
+    "pip6_0": {
+      "kind": "sol.sphere",
+      "pos": [
+        1408.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          -4.0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 17
+    },
+    "pip6_1": {
+      "kind": "sol.sphere",
+      "pos": [
+        1770.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 18
+    },
+    "pip6_2": {
+      "kind": "sol.sphere",
+      "pos": [
+        2133.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          -4.0,
+          4.0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 19
+    },
+    "pip6_3": {
+      "kind": "sol.sphere",
+      "pos": [
+        2495.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          -4.0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 20
+    },
+    "pip6_4": {
+      "kind": "sol.sphere",
+      "pos": [
+        2858.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 21
+    },
+    "pip6_5": {
+      "kind": "sol.sphere",
+      "pos": [
+        3220.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          4.0,
+          4.0,
+          -8.0
+        ],
+        "operation": "cut",
+        "radius": "1.5"
+      },
+      "serial": 22
+    },
+    "round": {
+      "kind": "sol.sphere",
+      "pos": [
+        698.0,
+        0.0
+      ],
+      "values": {
+        "center": [
+          0,
+          0,
+          0
+        ],
+        "operation": "intersect",
+        "radius": "11.04"
+      },
+      "serial": 1
+    },
+    "save_3mf": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        757.0
+      ],
+      "values": {
+        "basename": "die-16mm",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "solidcraft"
+    },
+    "save_iso": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        373.0
+      ],
+      "values": {
+        "basename": "die-iso",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "solidcraft"
+    },
+    "save_measure": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        594.0
+      ],
+      "values": {
+        "basename": "die-measure",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 6,
+      "engine": "solidcraft"
+    },
+    "save_step": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        925.0
+      ],
+      "values": {
+        "basename": "die-16mm",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "solidcraft"
+    },
+    "save_stl": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        1088.0
+      ],
+      "values": {
+        "basename": "die-16mm",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "solidcraft"
+    },
+    "save_under": {
+      "kind": "file.write",
+      "pos": [
+        4346.0,
+        1251.0
+      ],
+      "values": {
+        "basename": "die-bottom",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "solidcraft"
+    },
+    "step": {
+      "kind": "sol.export_step",
+      "pos": [
+        3961.0,
+        925.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "stl": {
+      "kind": "sol.export_stl",
+      "pos": [
+        3961.0,
+        1059.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "under": {
+      "kind": "sol.export_png",
+      "pos": [
+        3961.0,
+        1214.0
+      ],
+      "values": {
+        "height": 600,
+        "view": "bottom",
+        "width": 800
+      },
+      "serial": 2
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "design",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cube",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "cube",
+        "port": "doc"
+      },
+      "to": {
+        "node": "round",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "round",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip1_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip1_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip6_5",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip6_5",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip2_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip2_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip2_1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip2_1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip5_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip5_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip5_1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip5_1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip5_2",
+        "port": "doc"
+      },
+      "via": [
+        [
+          4500,
+          296
+        ],
+        [
+          395,
+          324
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "pip5_2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip5_3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip5_3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip5_4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip5_4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip3_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip3_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip3_1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip3_1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip3_2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip3_2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip4_0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip4_0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip4_1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip4_1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip4_2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip4_2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pip4_3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pip4_3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "ivory",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "stl",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "mf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "step",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "measure",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "iso",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "ivory",
+        "port": "doc"
+      },
+      "to": {
+        "node": "under",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "stl",
+        "port": "stl"
+      },
+      "to": {
+        "node": "save_stl",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "mf",
+        "port": "mesh"
+      },
+      "to": {
+        "node": "save_3mf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "step",
+        "port": "step"
+      },
+      "to": {
+        "node": "save_step",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "iso",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_iso",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "under",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_under",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "measure",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_measure",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "SolidCraft only. A 16 mm six-sided die: a cube intersected with a sphere for the classic rounded corners, then 21 pips cut as spheres with opposite faces adding to seven. Exports STL and 3MF for the slicer, STEP for CAD, two renders, and the measured volume so you know how much filament it takes. Change the size or pip radius in the nodes.",
+    "tags": [
+      "3d-print",
+      "games"
+    ],
+    "title": "A die you can 3D print"
+  },
+  "engines": [
+    "solidcraft"
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "version": 1,
+  "nodes": {
+    "count": {
+      "kind": "wc.word_count",
+      "pos": [
+        1932.0,
+        439.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "fill0": {
+      "kind": "wc.replace",
+      "pos": [
+        395.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Your Name",
+        "with": "Morgan Crumb"
+      },
+      "title": "Replace Your Name"
+    },
+    "fill1": {
+      "kind": "wc.replace",
+      "pos": [
+        814.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "123 Your Street · City, ST 00000 · you@example.com",
+        "with": "4 Rye Lane · Breadford, VT 05001 · morgan@example.com"
+      },
+      "title": "Replace 123 Your Street · "
+    },
+    "fill2": {
+      "kind": "wc.replace",
+      "pos": [
+        1269.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Recipient Name",
+        "with": "Customer Care"
+      },
+      "title": "Replace Recipient Name"
+    },
+    "fill3": {
+      "kind": "wc.replace",
+      "pos": [
+        1716.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Title, Company",
+        "with": "Head of Firmware, ToastLogic Inc."
+      },
+      "title": "Replace Title, Company"
+    },
+    "fill4": {
+      "kind": "wc.replace",
+      "pos": [
+        2157.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Street Address",
+        "with": "1 Crust Plaza, Palo Alto, CA"
+      },
+      "title": "Replace Street Address"
+    },
+    "fill5": {
+      "kind": "wc.replace",
+      "pos": [
+        2598.0,
+        0.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Dear Recipient,",
+        "with": "Dear Customer Care,"
+      },
+      "title": "Replace Dear Recipient,"
+    },
+    "fill6": {
+      "kind": "wc.replace",
+      "pos": [
+        0.0,
+        439.0
+      ],
+      "values": {
+        "matchCase": true,
+        "text": "Start with a sentence that says why you are writing. Keep paragraphs short and specific, and close with what you would like to happen next.",
+        "with": "Since firmware 4.2 arrived on Tuesday, my ToastLogic Pro has branded the word HELLO onto every slice, including the bagels. I did not ask for this, my children now refuse plain toast, and the cat has started to expect a greeting. Please send a downgrade, or a version that can at least spell GOODBYE, by the end of the month."
+      },
+      "title": "Replace Start with a sente"
+    },
+    "font": {
+      "kind": "wc.font",
+      "pos": [
+        805.0,
+        439.0
+      ],
+      "values": {
+        "name": "Georgia"
+      },
+      "serial": 1
+    },
+    "letter": {
+      "kind": "wc.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "template": "letter"
+      },
+      "serial": 1
+    },
+    "md": {
+      "kind": "wc.export_md",
+      "pos": [
+        1932.0,
+        594.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "pdf": {
+      "kind": "wc.export_pdf",
+      "pos": [
+        1932.0,
+        710.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "png": {
+      "kind": "wc.export_png",
+      "pos": [
+        1932.0,
+        826.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "props": {
+      "kind": "wc.properties",
+      "pos": [
+        1496.0,
+        439.0
+      ],
+      "values": {
+        "author": "Morgan Crumb",
+        "keywords": "complaint, firmware, toast"
+      },
+      "title": "Toast that says HELLO"
+    },
+    "save_count": {
+      "kind": "file.write",
+      "pos": [
+        2370.0,
+        439.0
+      ],
+      "values": {
+        "basename": "word-count",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "wordcraft"
+    },
+    "save_md": {
+      "kind": "file.write",
+      "pos": [
+        2370.0,
+        602.0
+      ],
+      "values": {
+        "basename": "letter",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "wordcraft"
+    },
+    "save_pdf": {
+      "kind": "file.write",
+      "pos": [
+        2370.0,
+        765.0
+      ],
+      "values": {
+        "basename": "letter",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "wordcraft"
+    },
+    "save_png": {
+      "kind": "file.write",
+      "pos": [
+        2370.0,
+        928.0
+      ],
+      "values": {
+        "basename": "letter",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "wordcraft"
+    },
+    "size": {
+      "kind": "wc.font_size",
+      "pos": [
+        1138.0,
+        439.0
+      ],
+      "values": {
+        "size": 11.5
+      },
+      "serial": 1
+    },
+    "theme": {
+      "kind": "wc.theme",
+      "pos": [
+        457.0,
+        439.0
+      ],
+      "values": {
+        "name": "Atelier"
+      },
+      "serial": 1
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "letter",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill0",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill0",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill1",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill1",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill3",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill3",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill4",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill4",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill5",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fill5",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fill6",
+        "port": "doc"
+      },
+      "via": [
+        [
+          3022,
+          352
+        ],
+        [
+          155,
+          390
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "fill6",
+        "port": "doc"
+      },
+      "to": {
+        "node": "theme",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "theme",
+        "port": "doc"
+      },
+      "to": {
+        "node": "font",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "font",
+        "port": "doc"
+      },
+      "to": {
+        "node": "size",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "size",
+        "port": "doc"
+      },
+      "to": {
+        "node": "props",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "md",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "count",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "count",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_count",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "md",
+        "port": "markdown"
+      },
+      "to": {
+        "node": "save_md",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "WordCraft only. The letter template, filled in by Replace all: a complaint to a smart-toaster company whose firmware update made every slice of toast say 'HELLO'. Change the replacements and you have your own letter, as PDF, Markdown and a page-one PNG.",
+    "tags": [
+      "letters",
+      "templates"
+    ],
+    "title": "A firm but polite letter"
+  },
+  "engines": [
+    "wordcraft"
+  ]
+}

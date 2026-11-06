@@ -1,0 +1,394 @@
+{
+  "version": 1,
+  "nodes": {
+    "blank": {
+      "kind": "dk.delete_slide",
+      "pos": [
+        824.0,
+        0.0
+      ],
+      "values": {
+        "index": 0
+      },
+      "title": "Drop the empty first slide"
+    },
+    "cover": {
+      "kind": "dk.export_png",
+      "pos": [
+        1264.0,
+        291.0
+      ],
+      "values": {
+        "scale": 0.5,
+        "slide": 0
+      },
+      "serial": 1
+    },
+    "deck": {
+      "kind": "dk.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "theme": "Nocturne"
+      },
+      "serial": 1
+    },
+    "gif": {
+      "kind": "dk.export_gif",
+      "pos": [
+        1264.0,
+        484.0
+      ],
+      "values": {
+        "secondsPerSlide": 1.5,
+        "width": "small"
+      },
+      "serial": 1
+    },
+    "notes": {
+      "kind": "dk.notes",
+      "pos": [
+        413.0,
+        291.0
+      ],
+      "values": {
+        "index": 3,
+        "text": "Pause here. Let the investors look at the cat. Do not mention the hairball incident."
+      },
+      "serial": 1
+    },
+    "nums": {
+      "kind": "dk.header_footer",
+      "pos": [
+        0.0,
+        291.0
+      ],
+      "values": {
+        "footer": true,
+        "footerText": "Purrfect Uptime · confidential-ish",
+        "slideNumber": true
+      },
+      "serial": 1
+    },
+    "pdf": {
+      "kind": "dk.export_pdf",
+      "pos": [
+        1264.0,
+        708.0
+      ],
+      "values": {
+        "layout": "slides"
+      },
+      "serial": 1
+    },
+    "pptx": {
+      "kind": "dk.export_pptx",
+      "pos": [
+        1264.0,
+        1016.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "props": {
+      "kind": "dk.properties",
+      "pos": [
+        800.0,
+        291.0
+      ],
+      "values": {
+        "author": "The founders (and Biscuit)"
+      },
+      "title": "Purrfect Uptime: seed deck"
+    },
+    "save_cover": {
+      "kind": "file.write",
+      "pos": [
+        1699.0,
+        291.0
+      ],
+      "values": {
+        "basename": "purrfect-uptime",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "deckcraft"
+    },
+    "save_gif": {
+      "kind": "file.write",
+      "pos": [
+        1699.0,
+        484.0
+      ],
+      "values": {
+        "basename": "purrfect-uptime",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "deckcraft"
+    },
+    "save_pdf": {
+      "kind": "file.write",
+      "pos": [
+        1699.0,
+        708.0
+      ],
+      "values": {
+        "basename": "purrfect-uptime",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "deckcraft"
+    },
+    "save_pptx": {
+      "kind": "file.write",
+      "pos": [
+        1699.0,
+        1016.0
+      ],
+      "values": {
+        "basename": "purrfect-uptime",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "deckcraft"
+    },
+    "slides": {
+      "kind": "dk.from_outline",
+      "pos": [
+        410.0,
+        0.0
+      ],
+      "values": {
+        "markdown": true,
+        "text": "# Purrfect Uptime\n- Cat café meets server room\n- Seed round, Q1\n# The problem\n- Data centres are cold and lonely\n- Cats are warm and judgmental\n# The solution\n- Every rack gets a resident cat\n- Heat from the GPUs, purring in return\n- Downtime falls when someone is watching\n# Traction\n- 3 racks, 4 cats, 0 outages that the cats will admit to\n- One cat has root\n# The ask\n- $2M for kibble, cable guards and a very long laser pointer"
+      },
+      "serial": 1
+    },
+    "theme": {
+      "kind": "dk.theme",
+      "pos": [
+        1278.0,
+        0.0
+      ],
+      "values": {
+        "name": "Nocturne"
+      },
+      "serial": 1
+    },
+    "trans": {
+      "kind": "dk.transition",
+      "pos": [
+        1624.0,
+        0.0
+      ],
+      "values": {
+        "index": 1,
+        "kind": "push"
+      },
+      "serial": 1
+    },
+    "trans2": {
+      "kind": "dk.transition",
+      "pos": [
+        1997.0,
+        0.0
+      ],
+      "values": {
+        "index": 3,
+        "kind": "fade"
+      },
+      "serial": 2
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "deck",
+        "port": "doc"
+      },
+      "to": {
+        "node": "slides",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "slides",
+        "port": "doc"
+      },
+      "to": {
+        "node": "blank",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "blank",
+        "port": "doc"
+      },
+      "to": {
+        "node": "theme",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "theme",
+        "port": "doc"
+      },
+      "to": {
+        "node": "trans",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "trans",
+        "port": "doc"
+      },
+      "to": {
+        "node": "trans2",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "trans2",
+        "port": "doc"
+      },
+      "to": {
+        "node": "nums",
+        "port": "doc"
+      },
+      "via": [
+        [
+          2306,
+          199
+        ],
+        [
+          98,
+          267
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "nums",
+        "port": "doc"
+      },
+      "to": {
+        "node": "notes",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "notes",
+        "port": "doc"
+      },
+      "to": {
+        "node": "props",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pptx",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "gif",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "props",
+        "port": "doc"
+      },
+      "to": {
+        "node": "cover",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "pptx",
+        "port": "pptx"
+      },
+      "to": {
+        "node": "save_pptx",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "gif",
+        "port": "gif"
+      },
+      "to": {
+        "node": "save_gif",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "cover",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_cover",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 1,
+  "meta": {
+    "about": "DeckCraft only. A Markdown outline becomes a themed, numbered deck with transitions and speaker notes, then a PDF, a PowerPoint file and an animated GIF to post. The startup is a cat café inside a data centre. Edit the outline and every export follows.",
+    "tags": [
+      "slides",
+      "templates"
+    ],
+    "title": "A pitch deck in one outline"
+  },
+  "engines": [
+    "deckcraft"
+  ]
+}

@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# Check, run or tidy the graphs in this collection with PlumCraft's own headless editor.
+#
+#   scripts/graphs list  [GRAPH...]                 title and engines of each graph
+#   scripts/graphs check [GRAPH...]                 plumcraft-editor check, one graph at a time
+#   scripts/graphs run   [GRAPH...] [--out DIR]     plumcraft-editor run; files go to DIR/<graph>/ (default: out)
+#   scripts/graphs tidy  [GRAPH...]                 plumcraft-editor tidy (Edit › Tidy, saved in place)
+#
+# GRAPH is a .json file or a folder of them (default: graphs). Every graph names its engines, so
+# no --engine is needed. The editor is $PLUMCRAFT_EDITOR, else plumcraft-editor on PATH, else the
+# installed app. `run` writes out/REPORT.md and exits 1 if any graph failed.
+#
+# Graphs that use DuckDB need the DuckDB engine (github.com/seantrue/plumcraft-duckdb): installed
+# with its scripts/install, or $PLUMCRAFT_DUCKDB naming its plumcraft-engine.toml, or checked out
+# beside this project as ../plumcraft-duckdb.
+set -uo pipefail
+
+here="$(cd "$(dirname "$0")/.." && pwd)"
+cmd="${1:-}"; shift || true
+out="$here/out"
+paths=()
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --out) out="$(cd "$(dirname "$2")" && pwd)/$(basename "$2")"; shift 2 ;;
+    -*) echo "graphs: unknown option $1" >&2; exit 2 ;;
+    *) paths+=("$1"); shift ;;
+  esac
+done
+[ ${#paths[@]} -eq 0 ] && paths=("$here/graphs")
+
+editor="${PLUMCRAFT_EDITOR:-}"
+if [ -z "$editor" ]; then
+  editor="$(command -v plumcraft-editor || true)"
+  [ -z "$editor" ] && [ -x /Applications/PlumCraft.app/Contents/MacOS/plumcraft-editor ] && editor=/Applications/PlumCraft.app/Contents/MacOS/plumcraft-editor
+fi
+if [ -z "$editor" ] && [ "$cmd" != list ]; then
+  echo "graphs: no plumcraft-editor: install PlumCraft, or set PLUMCRAFT_EDITOR" >&2; exit 2
+fi
+
+# engines that aren't built into PlumCraft, by their manifests
+extra=()
+duckdb="${PLUMCRAFT_DUCKDB:-$here/../plumcraft-duckdb/plumcraft-engine.toml}"
+[ -f "$duckdb" ] && [ ! -e "$HOME/.config/plumcraft/engines/duckdb.toml" ] && extra+=(--engine-manifest "$duckdb")
+
+graphs=()
+while IFS= read -r f; do graphs+=("$f"); done < <(find "${paths[@]}" -name '*.json' -type f -not -path '*/out/*' | sort)
+
+meta() { python3 -c 'import json,sys; g=json.load(open(sys.argv[1])); print(g.get("meta",{}).get("title","?") + "\t" + ",".join(g.get("engines",[])))' "$1"; }
+
+case "$cmd" in
+  list)
+    for g in "${graphs[@]}"; do printf '%-48s %s\n' "${g#$here/}" "$(meta "$g")"; done ;;
+  check|tidy)
+    bad=0
+    for g in "${graphs[@]}"; do
+      if "$editor" "$cmd" "$g" ${extra[@]+"${extra[@]}"}; then echo "ok    ${g#$here/}"; else echo "FAIL  ${g#$here/}"; bad=1; fi
+    done
+    exit $bad ;;
+  run)
+    mkdir -p "$out"
+    report="$out/REPORT.md"
+    printf '# Graph run\n\n| Graph | Result | Seconds | Files |\n|---|---|---|---|\n' > "$report"
+    bad=0
+    for g in "${graphs[@]}"; do
+      slug="$(basename "$g" .json)"
+      echo "── ${g#$here/}  [$(meta "$g" | cut -f2)]"
+      start=$(date +%s)
+      if "$editor" run "$g" --out "$out/$slug" ${extra[@]+"${extra[@]}"} > "$out/$slug.log" 2>&1; then state=ok; else state=FAIL; bad=1; tail -5 "$out/$slug.log"; fi
+      secs=$(( $(date +%s) - start ))
+      files="$(ls "$out/$slug" 2>/dev/null | tr '\n' ' ')"
+      echo "   $state in ${secs}s: $files"
+      echo "| \`${g#$here/}\` | $state | $secs | $files |" >> "$report"
+    done
+    echo; echo "report: $report"
+    exit $bad ;;
+  *)
+    sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'; [ -z "$cmd" ] && exit 0 || exit 2 ;;
+esac

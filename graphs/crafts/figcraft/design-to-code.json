@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "nodes": {
+    "bg": {
+      "kind": "fig.rectangle",
+      "pos": [
+        405.0,
+        0.0
+      ],
+      "values": {
+        "height": 520.0,
+        "props": {
+          "cornerRadius": 28,
+          "fills": [
+            "#F4F1EA"
+          ],
+          "name": "Card background"
+        },
+        "width": 360.0,
+        "x": 0.0,
+        "y": 0.0
+      },
+      "serial": 1
+    },
+    "body": {
+      "kind": "fig.text",
+      "pos": [
+        1842.0,
+        0.0
+      ],
+      "values": {
+        "props": {
+          "fontSize": 16
+        },
+        "text": "It has been 9 days. Ferns are dramatic. A glass of water and a kind word should do it.",
+        "width": 296.0,
+        "x": 32.0,
+        "y": 270.0
+      },
+      "serial": 1
+    },
+    "button": {
+      "kind": "fig.rectangle",
+      "pos": [
+        0.0,
+        426.0
+      ],
+      "values": {
+        "height": 56.0,
+        "props": {
+          "cornerRadius": 16,
+          "fills": [
+            "#8E4585"
+          ]
+        },
+        "width": 296.0,
+        "x": 32.0,
+        "y": 420.0
+      },
+      "serial": 2
+    },
+    "card": {
+      "kind": "fig.frame_selection",
+      "pos": [
+        723.0,
+        426.0
+      ],
+      "values": {
+        "name": "Onboarding card"
+      },
+      "serial": 1
+    },
+    "css": {
+      "kind": "fig.code",
+      "pos": [
+        1131.0,
+        426.0
+      ],
+      "values": {
+        "language": "css"
+      },
+      "serial": 1
+    },
+    "file": {
+      "kind": "fig.new",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "label": {
+      "kind": "fig.text",
+      "pos": [
+        381.0,
+        426.0
+      ],
+      "values": {
+        "props": {
+          "fills": [
+            "#FFFFFF"
+          ],
+          "fontSize": 18
+        },
+        "text": "Water it now",
+        "x": 126.0,
+        "y": 436.0
+      },
+      "serial": 2
+    },
+    "leaf": {
+      "kind": "fig.ellipse",
+      "pos": [
+        1154.0,
+        0.0
+      ],
+      "values": {
+        "height": 140.0,
+        "props": {
+          "fills": [
+            "#6AA84F"
+          ]
+        },
+        "width": 140.0,
+        "x": 110.0,
+        "y": 48.0
+      },
+      "serial": 1
+    },
+    "png": {
+      "kind": "fig.export_png",
+      "pos": [
+        1131.0,
+        653.0
+      ],
+      "values": {
+        "scale": 2.0
+      },
+      "serial": 1
+    },
+    "react": {
+      "kind": "fig.code",
+      "pos": [
+        1131.0,
+        857.0
+      ],
+      "values": {
+        "language": "react"
+      },
+      "serial": 2
+    },
+    "save_css": {
+      "kind": "file.write",
+      "pos": [
+        1532.0,
+        426.0
+      ],
+      "values": {
+        "basename": "card-css",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 1,
+      "engine": "figcraft"
+    },
+    "save_png": {
+      "kind": "file.write",
+      "pos": [
+        1532.0,
+        653.0
+      ],
+      "values": {
+        "basename": "onboarding-card",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 2,
+      "engine": "figcraft"
+    },
+    "save_react": {
+      "kind": "file.write",
+      "pos": [
+        1532.0,
+        857.0
+      ],
+      "values": {
+        "basename": "card-react",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 4,
+      "engine": "figcraft"
+    },
+    "save_svg": {
+      "kind": "file.write",
+      "pos": [
+        1532.0,
+        1084.0
+      ],
+      "values": {
+        "basename": "onboarding-card",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 3,
+      "engine": "figcraft"
+    },
+    "save_swiftui": {
+      "kind": "file.write",
+      "pos": [
+        1532.0,
+        1265.0
+      ],
+      "values": {
+        "basename": "card-swiftui",
+        "folder": "out",
+        "overwrite": true
+      },
+      "serial": 5,
+      "engine": "figcraft"
+    },
+    "shadow": {
+      "kind": "fig.effect",
+      "pos": [
+        783.0,
+        0.0
+      ],
+      "values": {
+        "type": "dropShadow"
+      },
+      "serial": 1
+    },
+    "svg": {
+      "kind": "fig.export_svg",
+      "pos": [
+        1131.0,
+        1084.0
+      ],
+      "values": {},
+      "serial": 1
+    },
+    "swiftui": {
+      "kind": "fig.code",
+      "pos": [
+        1131.0,
+        1265.0
+      ],
+      "values": {
+        "language": "swiftui"
+      },
+      "serial": 3
+    },
+    "title": {
+      "kind": "fig.text",
+      "pos": [
+        1499.0,
+        0.0
+      ],
+      "values": {
+        "props": {
+          "fontSize": 28,
+          "fontWeight": 700
+        },
+        "text": "Your fern misses you",
+        "width": 296.0,
+        "x": 32.0,
+        "y": 220.0
+      },
+      "serial": 3
+    }
+  },
+  "wires": [
+    {
+      "from": {
+        "node": "file",
+        "port": "doc"
+      },
+      "to": {
+        "node": "bg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "bg",
+        "port": "doc"
+      },
+      "to": {
+        "node": "shadow",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "shadow",
+        "port": "doc"
+      },
+      "to": {
+        "node": "leaf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "leaf",
+        "port": "doc"
+      },
+      "to": {
+        "node": "title",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "title",
+        "port": "doc"
+      },
+      "to": {
+        "node": "body",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "body",
+        "port": "doc"
+      },
+      "to": {
+        "node": "button",
+        "port": "doc"
+      },
+      "via": [
+        [
+          2151,
+          336
+        ],
+        [
+          -38,
+          399
+        ]
+      ]
+    },
+    {
+      "from": {
+        "node": "button",
+        "port": "doc"
+      },
+      "to": {
+        "node": "label",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "label",
+        "port": "doc"
+      },
+      "to": {
+        "node": "card",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "card",
+        "port": "doc"
+      },
+      "to": {
+        "node": "css",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "css",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_css",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "card",
+        "port": "doc"
+      },
+      "to": {
+        "node": "swiftui",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "swiftui",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_swiftui",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "card",
+        "port": "doc"
+      },
+      "to": {
+        "node": "react",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "react",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_react",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "card",
+        "port": "doc"
+      },
+      "to": {
+        "node": "png",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "card",
+        "port": "doc"
+      },
+      "to": {
+        "node": "svg",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "png",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_png",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "svg",
+        "port": "svg"
+      },
+      "to": {
+        "node": "save_svg",
+        "port": "values"
+      }
+    }
+  ],
+  "next_id": 2,
+  "meta": {
+    "about": "FigCraft only. An onboarding card for a plant-watering app ('Your fern misses you'), built from frames, shapes and text with auto layout and a soft shadow, exported as PNG and SVG, and as CSS, SwiftUI and React from Inspect code. The JSON files are the code.",
+    "tags": [
+      "ui",
+      "code"
+    ],
+    "title": "A design you can paste into code"
+  },
+  "engines": [
+    "figcraft"
+  ]
+}

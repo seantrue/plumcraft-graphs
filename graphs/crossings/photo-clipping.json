@@ -1,0 +1,1318 @@
+{
+  "engines": [
+    "photocraft",
+    "array",
+    "gridcraft"
+  ],
+  "meta": {
+    "about": "PhotoCraft → array engine → GridCraft. PhotoCraft gives the plums an aggressive 'Instagram' edit (auto tone, +35 brightness, +90 contrast, a hot colour lookup); the array engine takes a 32-bin histogram of each channel of the before and the after; GridCraft charts them and counts how much of each channel is crushed to black or blown to white. The PDF answers 'did I overdo it?' with numbers.",
+    "tags": [
+      "photo",
+      "analysis",
+      "image-to-data"
+    ],
+    "title": "Is my photo clipping?"
+  },
+  "nodes": {
+    "after": {
+      "kind": "pc.export_png",
+      "pos": [
+        1486.0,
+        486.0
+      ]
+    },
+    "after_ch": {
+      "kind": "array.split",
+      "pos": [
+        2139.0,
+        486.0
+      ]
+    },
+    "after_hB": {
+      "kind": "array.histogram",
+      "pos": [
+        2469.0,
+        810.0
+      ],
+      "title": "after B",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "after_hG": {
+      "kind": "array.histogram",
+      "pos": [
+        2469.0,
+        648.0
+      ],
+      "title": "after G",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "after_hR": {
+      "kind": "array.histogram",
+      "pos": [
+        2469.0,
+        486.0
+      ],
+      "title": "after R",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "after_px": {
+      "kind": "array.decode_image",
+      "pos": [
+        1802.0,
+        486.0
+      ]
+    },
+    "after_rB": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        2799.0,
+        810.0
+      ]
+    },
+    "after_rG": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        2799.0,
+        648.0
+      ]
+    },
+    "after_rR": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        2799.0,
+        486.0
+      ]
+    },
+    "area": {
+      "kind": "gc.run",
+      "pos": [
+        2745.0,
+        1044.0
+      ],
+      "title": "Print area",
+      "values": {
+        "command": "pageLayout.printArea",
+        "params": {
+          "range": "A1:K66"
+        }
+      }
+    },
+    "before": {
+      "kind": "pc.export_png",
+      "pos": [
+        314.0,
+        0.0
+      ]
+    },
+    "before_ch": {
+      "kind": "array.split",
+      "pos": [
+        1156.0,
+        0.0
+      ]
+    },
+    "before_hB": {
+      "kind": "array.histogram",
+      "pos": [
+        1486.0,
+        324.0
+      ],
+      "title": "before B",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "before_hG": {
+      "kind": "array.histogram",
+      "pos": [
+        1486.0,
+        162.0
+      ],
+      "title": "before G",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "before_hR": {
+      "kind": "array.histogram",
+      "pos": [
+        1486.0,
+        0.0
+      ],
+      "title": "before R",
+      "values": {
+        "bins": 32,
+        "high": 1.0,
+        "low": 0.0
+      }
+    },
+    "before_px": {
+      "kind": "array.decode_image",
+      "pos": [
+        763.0,
+        0.0
+      ]
+    },
+    "before_rB": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        1802.0,
+        360.0
+      ]
+    },
+    "before_rG": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        1802.0,
+        240.0
+      ]
+    },
+    "before_rR": {
+      "engine": "array",
+      "kind": "seq.table_rows",
+      "pos": [
+        1802.0,
+        120.0
+      ]
+    },
+    "book": {
+      "kind": "gc.new",
+      "pos": [
+        1802.0,
+        0.0
+      ]
+    },
+    "chart_a": {
+      "kind": "gc.chart",
+      "pos": [
+        1699.0,
+        1044.0
+      ],
+      "title": "After: R, G, B",
+      "values": {
+        "at": "E52",
+        "range": "E1:G33",
+        "type": "line"
+      }
+    },
+    "chart_b": {
+      "kind": "gc.chart",
+      "pos": [
+        1032.0,
+        1044.0
+      ],
+      "title": "Before: R, G, B",
+      "values": {
+        "at": "E37",
+        "range": "B1:D33",
+        "type": "line"
+      }
+    },
+    "fit": {
+      "kind": "gc.run",
+      "pos": [
+        3375.0,
+        1044.0
+      ],
+      "title": "AutoFit",
+      "values": {
+        "command": "home.autofitColumnWidth",
+        "params": {
+          "cols": "A:G"
+        }
+      }
+    },
+    "hide": {
+      "kind": "gc.run",
+      "pos": [
+        2359.0,
+        1044.0
+      ],
+      "title": "Hide the raw columns",
+      "values": {
+        "command": "home.hideColumns",
+        "params": {
+          "cols": "AA:AL"
+        }
+      }
+    },
+    "land": {
+      "kind": "gc.run",
+      "pos": [
+        3061.0,
+        1044.0
+      ],
+      "title": "Landscape",
+      "values": {
+        "command": "pageLayout.orientation",
+        "params": {
+          "orientation": "landscape"
+        }
+      }
+    },
+    "levels": {
+      "kind": "gc.write_range",
+      "pos": [
+        0.0,
+        1044.0
+      ],
+      "title": "Visible table",
+      "values": {
+        "range": "A1",
+        "values": [
+          [
+            "Level",
+            "before R",
+            "before G",
+            "before B",
+            "after R",
+            "after G",
+            "after B"
+          ],
+          [
+            "=AA2",
+            "=AB2",
+            "=AD2",
+            "=AF2",
+            "=AH2",
+            "=AJ2",
+            "=AL2"
+          ],
+          [
+            "=AA3",
+            "=AB3",
+            "=AD3",
+            "=AF3",
+            "=AH3",
+            "=AJ3",
+            "=AL3"
+          ],
+          [
+            "=AA4",
+            "=AB4",
+            "=AD4",
+            "=AF4",
+            "=AH4",
+            "=AJ4",
+            "=AL4"
+          ],
+          [
+            "=AA5",
+            "=AB5",
+            "=AD5",
+            "=AF5",
+            "=AH5",
+            "=AJ5",
+            "=AL5"
+          ],
+          [
+            "=AA6",
+            "=AB6",
+            "=AD6",
+            "=AF6",
+            "=AH6",
+            "=AJ6",
+            "=AL6"
+          ],
+          [
+            "=AA7",
+            "=AB7",
+            "=AD7",
+            "=AF7",
+            "=AH7",
+            "=AJ7",
+            "=AL7"
+          ],
+          [
+            "=AA8",
+            "=AB8",
+            "=AD8",
+            "=AF8",
+            "=AH8",
+            "=AJ8",
+            "=AL8"
+          ],
+          [
+            "=AA9",
+            "=AB9",
+            "=AD9",
+            "=AF9",
+            "=AH9",
+            "=AJ9",
+            "=AL9"
+          ],
+          [
+            "=AA10",
+            "=AB10",
+            "=AD10",
+            "=AF10",
+            "=AH10",
+            "=AJ10",
+            "=AL10"
+          ],
+          [
+            "=AA11",
+            "=AB11",
+            "=AD11",
+            "=AF11",
+            "=AH11",
+            "=AJ11",
+            "=AL11"
+          ],
+          [
+            "=AA12",
+            "=AB12",
+            "=AD12",
+            "=AF12",
+            "=AH12",
+            "=AJ12",
+            "=AL12"
+          ],
+          [
+            "=AA13",
+            "=AB13",
+            "=AD13",
+            "=AF13",
+            "=AH13",
+            "=AJ13",
+            "=AL13"
+          ],
+          [
+            "=AA14",
+            "=AB14",
+            "=AD14",
+            "=AF14",
+            "=AH14",
+            "=AJ14",
+            "=AL14"
+          ],
+          [
+            "=AA15",
+            "=AB15",
+            "=AD15",
+            "=AF15",
+            "=AH15",
+            "=AJ15",
+            "=AL15"
+          ],
+          [
+            "=AA16",
+            "=AB16",
+            "=AD16",
+            "=AF16",
+            "=AH16",
+            "=AJ16",
+            "=AL16"
+          ],
+          [
+            "=AA17",
+            "=AB17",
+            "=AD17",
+            "=AF17",
+            "=AH17",
+            "=AJ17",
+            "=AL17"
+          ],
+          [
+            "=AA18",
+            "=AB18",
+            "=AD18",
+            "=AF18",
+            "=AH18",
+            "=AJ18",
+            "=AL18"
+          ],
+          [
+            "=AA19",
+            "=AB19",
+            "=AD19",
+            "=AF19",
+            "=AH19",
+            "=AJ19",
+            "=AL19"
+          ],
+          [
+            "=AA20",
+            "=AB20",
+            "=AD20",
+            "=AF20",
+            "=AH20",
+            "=AJ20",
+            "=AL20"
+          ],
+          [
+            "=AA21",
+            "=AB21",
+            "=AD21",
+            "=AF21",
+            "=AH21",
+            "=AJ21",
+            "=AL21"
+          ],
+          [
+            "=AA22",
+            "=AB22",
+            "=AD22",
+            "=AF22",
+            "=AH22",
+            "=AJ22",
+            "=AL22"
+          ],
+          [
+            "=AA23",
+            "=AB23",
+            "=AD23",
+            "=AF23",
+            "=AH23",
+            "=AJ23",
+            "=AL23"
+          ],
+          [
+            "=AA24",
+            "=AB24",
+            "=AD24",
+            "=AF24",
+            "=AH24",
+            "=AJ24",
+            "=AL24"
+          ],
+          [
+            "=AA25",
+            "=AB25",
+            "=AD25",
+            "=AF25",
+            "=AH25",
+            "=AJ25",
+            "=AL25"
+          ],
+          [
+            "=AA26",
+            "=AB26",
+            "=AD26",
+            "=AF26",
+            "=AH26",
+            "=AJ26",
+            "=AL26"
+          ],
+          [
+            "=AA27",
+            "=AB27",
+            "=AD27",
+            "=AF27",
+            "=AH27",
+            "=AJ27",
+            "=AL27"
+          ],
+          [
+            "=AA28",
+            "=AB28",
+            "=AD28",
+            "=AF28",
+            "=AH28",
+            "=AJ28",
+            "=AL28"
+          ],
+          [
+            "=AA29",
+            "=AB29",
+            "=AD29",
+            "=AF29",
+            "=AH29",
+            "=AJ29",
+            "=AL29"
+          ],
+          [
+            "=AA30",
+            "=AB30",
+            "=AD30",
+            "=AF30",
+            "=AH30",
+            "=AJ30",
+            "=AL30"
+          ],
+          [
+            "=AA31",
+            "=AB31",
+            "=AD31",
+            "=AF31",
+            "=AH31",
+            "=AJ31",
+            "=AL31"
+          ],
+          [
+            "=AA32",
+            "=AB32",
+            "=AD32",
+            "=AF32",
+            "=AH32",
+            "=AJ32",
+            "=AL32"
+          ],
+          [
+            "=AA33",
+            "=AB33",
+            "=AD33",
+            "=AF33",
+            "=AH33",
+            "=AJ33",
+            "=AL33"
+          ]
+        ]
+      }
+    },
+    "lut": {
+      "kind": "pc.color_lookup",
+      "pos": [
+        1156.0,
+        183.0
+      ],
+      "values": {
+        "lut": "tealOrange"
+      }
+    },
+    "open": {
+      "kind": "pc.open",
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "values": {
+        "file": "../../assets/pictures/santa-rosa-plums.jpg"
+      }
+    },
+    "pct": {
+      "kind": "gc.number_format",
+      "pos": [
+        695.0,
+        1044.0
+      ],
+      "values": {
+        "format": "Percentage",
+        "range": "B38:C39"
+      }
+    },
+    "pdf": {
+      "kind": "gc.export_pdf",
+      "pos": [
+        3689.0,
+        1044.0
+      ]
+    },
+    "punch": {
+      "kind": "pc.brightness_contrast",
+      "pos": [
+        763.0,
+        183.0
+      ],
+      "values": {
+        "brightness": 35,
+        "contrast": 90
+      }
+    },
+    "save_after": {
+      "engine": "photocraft",
+      "kind": "file.write",
+      "pos": [
+        1802.0,
+        669.0
+      ],
+      "values": {
+        "basename": "plums-after",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_pdf": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        4012.0,
+        1044.0
+      ],
+      "values": {
+        "basename": "histograms",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "save_say": {
+      "engine": "gridcraft",
+      "kind": "file.write",
+      "pos": [
+        4012.0,
+        1206.0
+      ],
+      "values": {
+        "basename": "verdict",
+        "folder": "out",
+        "overwrite": true
+      }
+    },
+    "say": {
+      "kind": "gc.evaluate",
+      "pos": [
+        3689.0,
+        1164.0
+      ],
+      "title": "The verdict",
+      "values": {
+        "formula": "=C40"
+      }
+    },
+    "size_a": {
+      "kind": "gc.run",
+      "pos": [
+        2043.0,
+        1044.0
+      ],
+      "title": "Chart size",
+      "values": {
+        "command": "chart.set",
+        "params": {
+          "height": 200,
+          "title": "After: R, G, B",
+          "width": 300
+        }
+      }
+    },
+    "size_b": {
+      "kind": "gc.run",
+      "pos": [
+        1383.0,
+        1044.0
+      ],
+      "title": "Chart size",
+      "values": {
+        "command": "chart.set",
+        "params": {
+          "height": 200,
+          "title": "Before: R, G, B",
+          "width": 300
+        }
+      }
+    },
+    "summary": {
+      "kind": "gc.write_range",
+      "pos": [
+        337.0,
+        1044.0
+      ],
+      "title": "Clipping summary",
+      "values": {
+        "range": "A37",
+        "values": [
+          [
+            "Clipping",
+            "Before",
+            "After"
+          ],
+          [
+            "Crushed blacks (share of pixels)",
+            "=ROUND((B2+C2+D2)/SUM(B2:D33),4)",
+            "=ROUND((E2+F2+G2)/SUM(E2:G33),4)"
+          ],
+          [
+            "Blown whites (share of pixels)",
+            "=ROUND((B33+C33+D33)/SUM(B2:D33),4)",
+            "=ROUND((E33+F33+G33)/SUM(E2:G33),4)"
+          ],
+          [
+            "Verdict",
+            "",
+            "=IF(C38+C39>2*(B38+B39)+0.01,\"You overdid it\",\"Looks fine\")"
+          ]
+        ]
+      }
+    },
+    "tone": {
+      "kind": "pc.auto",
+      "pos": [
+        314.0,
+        120.0
+      ],
+      "values": {
+        "operation": "autoTone"
+      }
+    },
+    "w_after_hB": {
+      "kind": "gc.write_range",
+      "pos": [
+        3782.0,
+        0.0
+      ],
+      "title": "Raw after B",
+      "values": {
+        "range": "AK1"
+      }
+    },
+    "w_after_hG": {
+      "kind": "gc.write_range",
+      "pos": [
+        3459.0,
+        0.0
+      ],
+      "title": "Raw after G",
+      "values": {
+        "range": "AI1"
+      }
+    },
+    "w_after_hR": {
+      "kind": "gc.write_range",
+      "pos": [
+        3136.0,
+        0.0
+      ],
+      "title": "Raw after R",
+      "values": {
+        "range": "AG1"
+      }
+    },
+    "w_before_hB": {
+      "kind": "gc.write_range",
+      "pos": [
+        2799.0,
+        0.0
+      ],
+      "title": "Raw before B",
+      "values": {
+        "range": "AE1"
+      }
+    },
+    "w_before_hG": {
+      "kind": "gc.write_range",
+      "pos": [
+        2469.0,
+        0.0
+      ],
+      "title": "Raw before G",
+      "values": {
+        "range": "AC1"
+      }
+    },
+    "w_before_hR": {
+      "kind": "gc.write_range",
+      "pos": [
+        2139.0,
+        0.0
+      ],
+      "title": "Raw before R",
+      "values": {
+        "range": "AA1"
+      }
+    }
+  },
+  "version": 1,
+  "wires": [
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "tone",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "tone",
+        "port": "doc"
+      },
+      "to": {
+        "node": "punch",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "punch",
+        "port": "doc"
+      },
+      "to": {
+        "node": "lut",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "lut",
+        "port": "doc"
+      },
+      "to": {
+        "node": "after",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "open",
+        "port": "doc"
+      },
+      "to": {
+        "node": "before",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "before",
+        "port": "image"
+      },
+      "to": {
+        "node": "before_px",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "before_px",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "before_ch",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "before_ch",
+        "port": "c1"
+      },
+      "to": {
+        "node": "before_hR",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "before_hR",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "before_rR",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "book",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_before_hR",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "before_rR",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_before_hR",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "before_ch",
+        "port": "c2"
+      },
+      "to": {
+        "node": "before_hG",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "before_hG",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "before_rG",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "w_before_hR",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_before_hG",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "before_rG",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_before_hG",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "before_ch",
+        "port": "c3"
+      },
+      "to": {
+        "node": "before_hB",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "before_hB",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "before_rB",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "w_before_hG",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_before_hB",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "before_rB",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_before_hB",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "after",
+        "port": "image"
+      },
+      "to": {
+        "node": "after_px",
+        "port": "image"
+      }
+    },
+    {
+      "from": {
+        "node": "after_px",
+        "port": "rgb"
+      },
+      "to": {
+        "node": "after_ch",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "after_ch",
+        "port": "c1"
+      },
+      "to": {
+        "node": "after_hR",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "after_hR",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "after_rR",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "w_before_hB",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_after_hR",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "after_rR",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_after_hR",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "after_ch",
+        "port": "c2"
+      },
+      "to": {
+        "node": "after_hG",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "after_hG",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "after_rG",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "w_after_hR",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_after_hG",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "after_rG",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_after_hG",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "after_ch",
+        "port": "c3"
+      },
+      "to": {
+        "node": "after_hB",
+        "port": "array"
+      }
+    },
+    {
+      "from": {
+        "node": "after_hB",
+        "port": "histogram"
+      },
+      "to": {
+        "node": "after_rB",
+        "port": "table"
+      }
+    },
+    {
+      "from": {
+        "node": "w_after_hG",
+        "port": "doc"
+      },
+      "to": {
+        "node": "w_after_hB",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "after_rB",
+        "port": "rows"
+      },
+      "to": {
+        "node": "w_after_hB",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "w_after_hB",
+        "port": "doc"
+      },
+      "to": {
+        "node": "levels",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "levels",
+        "port": "doc"
+      },
+      "to": {
+        "node": "summary",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "summary",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pct",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pct",
+        "port": "doc"
+      },
+      "to": {
+        "node": "chart_b",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "chart_b",
+        "port": "doc"
+      },
+      "to": {
+        "node": "size_b",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "size_b",
+        "port": "doc"
+      },
+      "to": {
+        "node": "chart_a",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "chart_a",
+        "port": "doc"
+      },
+      "to": {
+        "node": "size_a",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "size_a",
+        "port": "doc"
+      },
+      "to": {
+        "node": "hide",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "hide",
+        "port": "doc"
+      },
+      "to": {
+        "node": "area",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "area",
+        "port": "doc"
+      },
+      "to": {
+        "node": "land",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "land",
+        "port": "doc"
+      },
+      "to": {
+        "node": "fit",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "pdf",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "fit",
+        "port": "doc"
+      },
+      "to": {
+        "node": "say",
+        "port": "doc"
+      }
+    },
+    {
+      "from": {
+        "node": "pdf",
+        "port": "pdf"
+      },
+      "to": {
+        "node": "save_pdf",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "say",
+        "port": "result"
+      },
+      "to": {
+        "node": "save_say",
+        "port": "values"
+      }
+    },
+    {
+      "from": {
+        "node": "after",
+        "port": "image"
+      },
+      "to": {
+        "node": "save_after",
+        "port": "values"
+      }
+    }
+  ]
+}
